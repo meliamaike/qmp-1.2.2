@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>QuéMePongo</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Dela+Gothic+One&family=Faster+One&family=Goldman:wght@400;700&family=Roboto&family=Roboto+Condensed:ital,wght@0,700;1,700&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <%= yield %>
+  <!-----FOOTER----->
+  <footer class="main-footer">
+    <ul class="footer-list">
+      <li>
+        <a>
+          <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a>
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a>
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="footer-text">
+      <a>Términos y Condiciones</a>
+      <h4>|</h4>
+      <a>Políticas de Privacidad</a>
+    </div>
+    <p> © 2021, QueMePongo </p>
+    <img src="/assets/logo2.png" alt="logotipo" class="footer-logo">
+  </footer>
+
+  <!--BANNER SCRIPTS-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.min.js"></script>
+
+  <script>
+
+
+      $(function() {
+
+          $(".rslides").responsiveSlides({
+
+              auto: true, // Boolean: Animate automatically, true or false
+
+              speed: 500, // Integer: Speed of the        transition, in milliseconds
+
+              timeout: 4000, // Integer: Time between slide transitions, in milliseconds
+
+              pager: false, // Boolean: Show pager, true or false
+
+              nav: false, // Boolean: Show navigation, true or false
+
+              random: false, // Boolean: Randomize the order of the slides, true or false
+
+              pause: false, // Boolean: Pause on hover, true or false
+
+              pauseControls: true, // Boolean: Pause when hovering controls, true or false
+
+              prevText: "Previous", // String: Text for the "previous" button
+
+              nextText: "Next", // String: Text for the "next" button
+
+              maxwidth: "", // Integer: Max-width of the slideshow, in pixels
+
+              navContainer: "", // Selector: Where controls should be appended to, default is after the 'ul'
+
+              manualControls: "", // Selector: Declare custom pager navigation
+
+              namespace: "rslides", // String: Change the default namespace used
+
+              before: function(){}, // Function: Before callback
+
+              after: function(){} // Function: After callback
+
+          });
+
+      });
+
+  </script>
+  </body>
+</html>

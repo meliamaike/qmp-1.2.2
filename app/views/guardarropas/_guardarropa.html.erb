@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <div><%= guardarropa.nombre %></div>
+    <div>
+      <%= link_to "", { :controller => :guardarropas, :action => :edit, id: guardarropa.id }, { class: "fa fa-pencil fa-fw"} %>
+      <%= link_to "", { :controller => :guardarropas, :action => :show, id: guardarropa.id }, { class: "fa fa-eye no-underline"} %>
+      <%= link_to "", guardarropa, method: :delete, :class =>"fa fa-trash", data: { confirm: '¿Está seguro que desea borrar el guardarropa?' } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<!--
+
+  Los formularios, ya sea que los usamos para crear (insertar en la base)
+  o para modificar un objeto (modificar en la base), van a tener que estar siempre
+  asociados a un objeto existente (no necesiamente sacado de la base)
+
+  Recordar que:
+    Prenda.create (instancia e inserta en la base) no es lo mismo que
+    Prenda.new (solamente instancia, no inserta)
+
+-->
+<%= render 'header'%>
+<div id="create-item">
+  <%= render 'form', guardarropa: @guardarropa, text:"Crear" , text2: "Creación de guardarropa"%>
+</div>
+
+
+

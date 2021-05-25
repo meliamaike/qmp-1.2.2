@@ -1,0 +1,56 @@
+<div style="background-color: blanchedalmond;">
+  <% if(!atuendo.descripcion.blank?) %>
+        <span>Descripcion:
+          <%= atuendo.descripcion%>
+        </span>
+  <%end%>
+<div>
+  <div>
+    <% if(!atuendo.ocasion_tag.blank?) %>
+        <span>Ocasion:
+          <%= atuendo.ocasion_tag%>
+        </span>
+    <%end%>
+  </br>
+    <% if(!atuendo.estacion_tag.blank?) %>
+        <span>Estación:
+          <%= atuendo.estacion_tag%>
+        </span>
+    <%end%>
+    </br>
+    <% if(!atuendo.tiempo_tag.blank?) %>
+        <span>Horario:
+          <%= atuendo.tiempo_tag%>
+        </span>
+    <%end%>
+    </br>
+      <% if(!atuendo.puntaje.blank?)%>
+        <span>Puntaje: <%=atuendo.puntaje%>⭐️
+        </span>
+        <%end%>
+  </div>
+</div>
+</div>
+<div>
+  <div>
+    <% if !(atuendo.cabeza.blank?)  %>
+      <%= render 'prenda', prenda: atuendo.cabeza %>
+
+  <%end%>
+  </div>
+  <div>
+    <% if !(atuendo.torso.blank?)  %>
+      <%= render 'prenda', prenda: atuendo.torso %>
+    <%end%>
+  </div>
+  <div>
+    <% if !(atuendo.piernas.blank?)  %>
+      <%= render 'prenda', prenda: atuendo.piernas %>
+    <%end%>
+  </div>
+  <div>
+    <% if !(atuendo.pies.blank?)  %>
+      <%= render 'prenda', prenda: atuendo.pies %>
+    <%end%>
+  </div>
+</div>

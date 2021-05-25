@@ -1,0 +1,14 @@
+<div style="background-color: blanchedalmond;">
+  <div>
+      <%=prenda.descripcion %>
+      <%=prenda.categoria %>
+      <%=prenda.material %>
+      <%= prenda.color_primario %>
+      <%= prenda.color_secundario %>
+
+
+      <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
+      <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Está seguro que queres borrar la prenda?' }%>
+
+  </div>
+</div>

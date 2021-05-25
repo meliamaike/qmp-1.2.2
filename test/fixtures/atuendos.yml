@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  : MyString
+  torso: MyString
+  cabeza: MyString
+  piernas: MyString
+  pies: MyString
+  puntaje: MyString
+  estacion_tag: MyString
+  tiempo_tag: MyString
+  ocasion_tag: MyString
+  guardarropa_id: MyString
+  : 1
+  descripcion: MyString
+  : MyText
+
+two:
+  nombre: MyString
+  : MyString
+  torso: MyString
+  cabeza: MyString
+  piernas: MyString
+  pies: MyString
+  puntaje: MyString
+  estacion_tag: MyString
+  tiempo_tag: MyString
+  ocasion_tag: MyString
+  guardarropa_id: MyString
+  : 1
+  descripcion: MyString
+  : MyText

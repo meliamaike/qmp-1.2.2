@@ -1,0 +1,29 @@
+<%= render 'header'%>
+<div class="prenda-card">
+  <div class="prenda-data">
+    <h2><%= @prenda.descripcion %></h2>
+    <h5>Categoría: <%= @prenda.categoria %></h5>
+    <h5>Material: <%= @prenda.material %></h5>
+    <h5>Color primario: <%= @prenda.color_primario %></h5>
+    <h5>Color secundario: <%= @prenda.color_secundario %></h5>
+
+    <div class="conteiner-btn-edit-delete-prenda">
+      <%= link_to "<button>Editar</button>".html_safe, edit_prenda_path(@prenda),class:'btn-edit-prenda' %>
+      <%= link_to "<button>Borrar</button>".html_safe, @prenda, method: "delete", data: {confirm: 'Estas seguro?'}, class:'btn-delete-prenda' %>
+    </div>
+  </div>
+  <div class="prenda-image">
+    <% if @prenda.imagen.attached? %>
+
+      <%= image_tag(@prenda.imagen) %>
+    <%else %>
+      <%=image_tag("/assets/placeholder.png")%>
+    <%end %>
+  </div>
+
+    <%= link_to "<button>Volver atrás</button>".html_safe, prendas_path(@prenda), class:'btn-return' %>
+
+</div>
+
+
+

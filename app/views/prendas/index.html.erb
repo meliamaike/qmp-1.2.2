@@ -1,0 +1,25 @@
+<%= render 'header'%>
+<div id="prendas">
+  <div class="container-prendas">
+    <h2 class="prendas-title">Tus prendas</h2>
+    <%= link_to "Crear prenda", new_prenda_path, class:"new-item-btn" %>
+
+    <ul class="prendas-all">
+      <% @prendas.each do |prenda| %>
+        <li class="prenda-unit">
+          <% if prenda.imagen.attached? %>
+              <%= link_to image_tag(prenda.imagen), prenda %>
+            <%else %>
+              <%= link_to image_tag("/assets/placeholder.png"), prenda%>
+          <% end %>
+          <h3><%= link_to prenda.descripcion, prenda%></h3>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+

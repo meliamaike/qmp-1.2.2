@@ -1,0 +1,11 @@
+<%= render 'header'%>
+<div style="background-color: blanchedalmond;">
+  <h3> <%= @atuendo.nombre %></h3><h2>!!!!!!!!</h2>
+  <%= link_to "", { :controller => :atuendos, :action => :edit, id: @atuendo.id }, { class: "fa fa-pencil-square-o no-underline"} %>
+  <%= link_to "", guardarropa_atuendo_path(:guardarropa_id => params[:guardarropa_id],:id => @atuendo.id),class: "fa fa-times no-underline", method: :delete, data: { confirm: '¿Está seguro que desea borrar el atuendo?' } %>
+
+  <% if(!@atuendo.descripcion.blank?) %>
+    <h3><%= @atuendo.descripcion %></h3>
+  <% end %>
+  <%= render 'atuendo', atuendo: @atuendo%>
+</div>

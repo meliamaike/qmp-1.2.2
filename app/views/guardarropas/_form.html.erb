@@ -1,0 +1,14 @@
+<div class="create-item-container">
+  <h2 class="create-title-contact">Crear guardarropa</h2>
+  <div class="create-form">
+    <%= form_for @guardarropa do |f|%>
+      <%= text_field(:guardarropa, :nombre, {:class => 'form-items',placeholder:'Nombre'})%>
+      <%#= f.label :imagen,{class:'form-items-title' }  %>
+      <%#= f.file_field :imagen, {class:'btn-item-image'}%>
+      <div class="create-form-submit-buttons">
+        <%= f.submit 'Guardar', {class:'btn-item-submit'} %>
+        <%= link_to "<button>Cancelar</button>".html_safe, guardarropas_path(@guardarropa) , class: 'btn-item-cancel'%>
+      </div>
+    <% end%>
+  </div>
+</div>

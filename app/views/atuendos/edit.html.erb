@@ -1,0 +1,93 @@
+<%= render 'header'%>
+  <div style="background-color: blanchedalmond;">
+    <div>
+      <div>
+        <h2 class="text-center">Edición de atuendos</h2>
+        <%= form_for @atuendo, :url => { :action => "update" , :id => @atuendo.id}, :method => :put do |f| %>
+          <div>
+            <%= f.label :nombre, {:class => 'm-3'} %>
+            <%= f.text_field :nombre %>
+          </div>
+          <div>
+            <div>
+              <h3>Cabeza</h3>
+              <% @prendas_cabeza.each do |p| %>
+                <%= f.radio_button :cabeza, p.id %>
+                <%= render 'prenda', prenda: p %>
+              <%end%>
+            </div>
+            <div>
+              <h3>Torso</h3>
+              <% @prendas_torso.each do |p| %>
+                <div>
+                  <%= f.radio_button :torso, p.id %>
+                  <%= render 'prenda', prenda: p %>
+                </div>
+              <%end%>
+            </div>
+            <div>
+              <h3>Piernas</h3>
+              <% @prendas_piernas.each do |p| %>
+                <%= f.radio_button :piernas, p.id %>
+                <%= render 'prenda', prenda: p %>
+              <%end%>
+            </div>
+            <div>
+              <h3>Pies</h3>
+              <% @prendas_pies.each do |p| %>
+                <%= f.radio_button :pies, p.id %>
+                <%= render 'prenda', prenda: p %>
+              <%end%>
+            </div>
+          </div>
+
+          <div>
+            <%= f.label :puntaje %><br />
+            <fieldset>
+              <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
+              <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐️") %>
+              <%= f.radio_button :puntaje, 3, {id: "star3"} %><%= label_tag(:star3, "3 ⭐️") %>
+              <%=f.radio_button :puntaje, 2, {id: "star2"}%> <%= label_tag(:star2, "2 ⭐️") %>
+              <%= f.radio_button :puntaje, 1, {id: "star1"} %><%= label_tag(:star1, "1 ⭐️") %>
+            </fieldset>
+            <div>
+          <div>
+            <div>
+              <%= f.label :estacion_tag %><br />
+              <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:
+                                                                                                             false, :prompt => "seleccione"}, {:class => 'form-control'})%>
+            </div>
+            <div>
+              <%= f.label :tiempo_tag %><br />
+              <%= f.select(:tiempo_tag,
+                           options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false,
+                                                                                   :prompt => "seleccione"}, {:class => 'form-control'})%>
+            </div>
+            <div>
+              <%= f.label :ocasion_tag %><br />
+              <%= f.select(:ocasion_tag,
+                           options_for_select(Atuendo.ocasion_tags.keys.to_a),{required:
+                                                                                           false, :prompt => "seleccione"}, {:class => 'form-control'})%>
+            </div>
+          </div>
+          <div>
+            <div>
+              <%= f.label :descripcion %> <%= f.text_area(:descripcion, {:class => 'form-control'}) %>
+            </div>
+
+                <p>
+                  <%= f.submit "Actualizar atuendo", :class=>'btn  btn-default' %>
+                </p>
+              </div>
+        <% end %>
+        </div>
+
+<!--          <a href="/guardarropas/<%#= @guardarropa.id %>/atuendos/new" class="link-nueva-prenda">-->
+<!--            <i class="fa fa-plus"></i>-->
+<!--          </a>-->
+
+
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,73 @@
+<%= render 'header'%>
+<section style="background-color: blanchedalmond;">
+  <div>
+    <div>
+      <div>
+        <h2>Crear un atuendo aleatoriamente</h2>
+        <%= form_for @atuendo, :url => { :action => "create" } do |f| %>
+
+          <%= f.hidden_field :from_generate, :value => "prueba_hidden_field" %>
+          <div>
+            <%= f.text_field :nombre, class: 'form-items' %>
+          </div>
+
+          <div>
+            <div>
+              <%= render 'prenda', prenda: @prenda_cabeza %>
+              <%= f.hidden_field :cabeza_id, :value => @prenda_cabeza.id %>
+            </div>
+            <div>
+              <%= render 'prenda', prenda: @prenda_torso %>
+              <%= f.hidden_field :torso_id, :value => @prenda_torso.id %>
+            </div>
+            <div>
+              <%= render 'prenda', prenda: @prenda_piernas %>
+              <%= f.hidden_field :piernas_id, :value => @prenda_piernas.id %>
+            </div>
+            <div>
+              <%= render 'prenda', prenda: @prenda_pies%>
+              <%= f.hidden_field :pies_id, :value => @prenda_pies.id %>
+            </div>
+
+            <div>
+              <%= f.label :puntaje %><br />
+              <fieldset>
+                <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
+                <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
+                <%= f.radio_button :puntaje, 3, {id: "star3"} %><%= label_tag(:star3, "3 ⭐") %>
+                <%=f.radio_button :puntaje, 2, {id: "star2"}%> <%= label_tag(:star2, "2 ⭐") %>
+                <%= f.radio_button :puntaje, 1, {id: "star1"} %><%= label_tag(:star1, "1 ⭐") %>
+              </fieldset>
+            </div>
+
+            <div>
+              <div>
+                <%= f.label :estacion_tag %><br />
+                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+              <div>
+                <%= f.label :tiempo_tag %><br />
+                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+              <div>
+                <%= f.label :ocasion_tag %><br />
+                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+            </div>
+            <div>
+              <div>
+                <%= f.label :descripcion %> <%= f.text_area(:descripcion, {:class => 'form-items'}) %>
+              </div>
+
+            </div>
+            <p>
+              <%= f.submit :class => 'btn btn-default', :value => 'Guardar'%>
+              <a type="button" class="btn btn-primary" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a>
+            </p>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</section>

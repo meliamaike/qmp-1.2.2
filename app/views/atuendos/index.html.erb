@@ -1,0 +1,25 @@
+<%= render 'header'%>
+<div style="background-color: blanchedalmond;">
+  <li style="font-size:30px;"><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></li>
+  <h2 style="font-size:30px;">Atuendos</h2>
+
+
+  <% if @atuendos.blank?  %>
+    <i class="fa fa-meh-o"></i> <span  style="font-size:30px;"class="text-center">No hay creado ningún atuendo todavía </span>
+  <% else %>
+    <% @atuendos.each do |a| %>
+
+      <h3> <%= a.nombre %>!!!!!</h3>
+
+      <%= link_to "", { :controller => :atuendos, :action => :edit, id: a.id }, { class: "fa fa-pencil fa-fw"} %>
+      <%= link_to "", { :controller => :atuendos, :action => :show, id: a.id }, { class: "fa fa-eye no-underline"} %>
+      <%= link_to "", guardarropa_atuendo_path(:guardarropa_id => params[:guardarropa_id],:id => a.id),class: "fa fa-times no-underline", method: :delete, data: { confirm: '¿Está seguro que queres borrar el atuendo?' } %>
+
+      <%= render 'atuendo', atuendo: a %>
+
+    <%end%>
+  <%end%>
+  <a style="font-size:30px;" href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new" class="link-nueva-prenda">
+    <i class="fa fa-plus-square-o"></i>
+  </a>
+</div>

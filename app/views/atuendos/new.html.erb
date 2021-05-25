@@ -1,0 +1,134 @@
+<%= render 'header'%>
+<div style="background-color: blanchedalmond;">
+    <div>
+
+      <h2><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></h2>
+
+      <div>
+        <div>
+          <h2>Creación de atuendos</h2>
+          <%= form_for @atuendo , :url => { :action => "create" } do |f| %>
+            <div>
+              <%= f.label :nombre %>
+              <%= f.text_field :nombre, class: 'form-items' %>
+            </div>
+            <div>
+              <div>
+                <h3>Cabeza</h3>
+
+                <% if @prendas_cabeza.blank?  %>
+                  <div>
+
+                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div>
+                      <a href="/prendas/new?prenda_tipo_id=1&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                    </div>
+
+                  </div>
+                <% else %>
+                  <% @prendas_cabeza.each do |p| %>
+                    <%= f.radio_button :cabeza, p.id, required: false %>
+                    <%= render 'prenda', prenda: p %>
+                    <%= f.hidden_field :cabeza_id, :value => p.id %>
+
+                  <%end%>
+                <%end%>
+              </div>
+              <div>
+                <h3>Torso</h3>
+                <% if @prendas_torso.blank? %>
+                  <div>
+                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div>
+                      <a href="/prendas/new?prenda_tipo_id=2&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                    </div>
+                  </div>
+                <% else %>
+                  <% @prendas_torso.each do |p| %>
+                    <div>
+                      <%= f.radio_button :torso, p.id, required: false %>
+                      <%= render 'prenda', prenda: p %>
+                      <%= f.hidden_field :torso_id, :value => p.id %>
+                    </div>
+                  <%end%>
+                <%end%>
+              </div>
+              <div>
+                <h3>Piernas</h3>
+                <% if @prendas_piernas.blank?  %>
+                  <div>
+
+                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div>
+                      <a href="/prendas/new?prenda_tipo_id=3&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                    </div>
+                  </div>
+                <% else %>
+                  <% @prendas_piernas.each do |p| %>
+                    <%= f.radio_button :piernas, p.id, required: false %>
+                    <%= render 'prenda', prenda: p %>
+                    <%= f.hidden_field :piernas_id, :value => p.id %>
+                  <%end%>
+                <%end%>
+              </div>
+              <div>
+                <h3>Pies</h3>
+                <% if @prendas_pies.blank?  %>
+                  <div>
+                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div>
+                      <a href="/prendas/new?prenda_tipo_id=4&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear!</a>
+                    </div>
+                  </div>
+                <% else %>
+                  <% @prendas_pies.each do |p| %>
+                    <%= f.radio_button :pies, p.id, required: false %>
+                    <%= render 'prenda', prenda: p %>
+                    <%= f.hidden_field :pies_id, :value => p.id %>
+                  <%end%>
+                <%end%>
+              </div>
+            </div>
+
+            <div>
+              <%= f.label :puntaje %><br />
+              <fieldset>
+                <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
+                <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
+                <%= f.radio_button :puntaje, 3, {id: "star3"} %><%= label_tag(:star3, "3 ⭐") %>
+                <%=f.radio_button :puntaje, 2, {id: "star2"}%> <%= label_tag(:star2, "2 ⭐") %>
+                <%= f.radio_button :puntaje, 1, {id: "star1"} %><%= label_tag(:star1, "1 ⭐") %>
+              </fieldset>
+            </div>
+            <div>
+              <div>
+                <%= f.label :estacion_tag %><br />
+                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+              <div>
+                <%= f.label :tiempo_tag %><br />
+                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+              <div>
+                <%= f.label :ocasion_tag %><br />
+                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+              </div>
+            </div>
+            <div>
+              <div>
+                <%= f.label :descripcion %> <%= f.text_area(:descripcion, {:class => 'form-items'}) %>
+              </div>
+
+            </div>
+            <div>
+              <p>
+                <%= f.submit "Crear", :class=>'btn-item-submit' %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

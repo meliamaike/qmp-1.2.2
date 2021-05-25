@@ -1,0 +1,19 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: junname
+  password: admin
+
+test:
+  <<: *common
+  database: que_me_pongo_2_test
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *common
+  database: que_me_pongo_2_development
+  pool: 5
+  timeout: 5000
