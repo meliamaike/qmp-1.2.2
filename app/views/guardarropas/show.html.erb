@@ -1,22 +1,35 @@
 <%= render 'header'%>
 <div class="guardarropas-show-container">
-  <h2><%= @guardarropa.nombre %></h2>
+  <h2 class="prendas-title"><%= @guardarropa.nombre %></h2>
+
+  <div class="show-btns-container">
+    <a class="btn-atuendos-all" type="button" href="/guardarropas/<%= @guardarropa.id %>/atuendos">Ver atuendos</a>
+    <a class="btn-atuendo" type="button" href="/guardarropas/<%= @guardarropa.id %>/atuendos/new">Crear atuendo</a>
+    <a class="btn-atuendo-random" type="button" href="/guardarropas/<%= @guardarropa.id %>/atuendos-generate">Random</a>
+  </div>
+
+  <div class="container-prendas-all-from-guardarropa">
+    <ul class="prendas-all-from-guardarropa">
+      <% if @guardarropa.prendas.blank? %>
+        <span class="text-center">Todavía no agregaste prendas <i class="fa fa-meh-o"></i></span>
+      <% else %>
+        <% @guardarropa.prendas.each do |p| %>
+          <li class="prendas-all-from-guardarropa-unit">
+            <%= render 'prenda', prenda: p %>
+          </li>
+        <%end%>
+      <% end %>
+    </ul>
+
+    <div class="prendas-all-from-guardarropa-add">
+      <a href="/prendas/new?guardarropa_id=<%=+params[:id]%>" title="Agregar nueva prenda">
+        Agregar nueva prenda  <i class="fa fa-plus"></i>
+      </a>
+    </div>
 
 
-  <a type="button"  href="/guardarropas/<%= @guardarropa.id %>/atuendos">Ver atuendos</a>
-  <a type="button"  href="/guardarropas/<%= @guardarropa.id %>/atuendos/new">Crear atuendo</a>
-  <a type="button"  href="/guardarropas/<%= @guardarropa.id %>/atuendos-generate">Generar atuendo</a>
+  </div>
 
-  <% if @guardarropa.prendas.blank? %>
-    <span class="text-center">Todavía no agregaste prendas <i class="fa fa-meh-o"></i></span>
-  <% else %>
-    <% @guardarropa.prendas.each do |p| %>
-      <%= render 'prenda', prenda: p %>
-    <%end%>
-  <% end %>
-  <a href="/prendas/new?guardarropa_id=<%=+params[:id]%>" title="Agregar nueva prenda">
-    <i class="fa fa-plus-square-o"></i>
-  </a>
 </div>
 
 

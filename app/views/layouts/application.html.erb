@@ -51,7 +51,7 @@
     <img src="/assets/logo2.png" alt="logotipo" class="footer-logo">
   </footer>
 
-  <!--BANNER SCRIPTS-->
+  <!--SCRIPTS-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.min.js"></script>
@@ -100,5 +100,24 @@
       });
 
   </script>
+
+    <script>
+        window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+        window.weatherWidgetConfig.push({
+            selector:".weatherWidget",
+            apiKey:"YGPKSU5N3FF33BD3T6AJD4X5A",
+            location:"Buenos Aires, Argentina",
+            unitGroup:"metric",
+            forecastDays: 1,
+            showTitle:false
+        });
+
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
   </body>
 </html>

@@ -24,5 +24,253 @@ img {
 
 
 .guardarropas-show-container{
-  background-color: honeydew;
+  background-color: rgb(243,199,214);
+}
+
+#guardarropas {
+  width:100vw;
+  padding-top: 40px;
+  padding-bottom: 90px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: rgb(243,199,214);
+  text-transform: uppercase;
+}
+
+.guardarropas-title {
+  font-size: 3.8em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: #4e0d3a;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.guardarropas-all {
+  margin: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.guardarropa-unit {
+  padding: 10px 15px;
+  margin: 10px;
+  text-align: start;
+  font-size: 25px;
+}
+
+.guardarropa-li-unit{
+
+  text-transform: capitalize;
+  color: #4e0d3a;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5%;
+}
+.guardarropa-actions-icons a{
+  font-size: 25px;
+  color: #4e0d3a;
+  margin-bottom: 8%;
+}
+
+.guardarropa-new-item-btn{
+  display: inline-block;
+  color: #FFFF;
+  background-color: #4e0d3a;
+  padding: 15px 20px ;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: auto 30%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.show-btns-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+
+}
+
+.btn-atuendo{
+  display: inline-block;
+  color: #FFFF;
+  background-color: #4e0d3a;
+  padding: 15px 20px ;
+  margin: 5% 32%;
+}
+
+.btn-atuendo-random, .btn-atuendos-all{
+  display: inline-block;
+  color:#4e0d3a;
+  background-color:  #FFFF;
+  padding: 15px 20px;
+  margin: 5% 35%;
+
+}
+
+.btn-atuendos-all{
+  display: inline-block;
+  color:#4e0d3a;
+  background-color:  #FFFF;
+  padding: 15px 20px;
+  margin: 5% 32%;
+
+}
+
+.container-prendas-all-from-guardarropa{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prendas-all-from-guardarropa{
+  margin: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.prendas-all-from-guardarropa-unit{
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.prenda-actions-icons a, .prendas-all-from-guardarropa-add a i {
+  font-size: 25px;
+  color: #4e0d3a;
+  margin-bottom: 8%;
+}
+.prendas-all-from-guardarropa-add{
+  font-size: 25px;
+  text-align: justify;
+  margin: 0 10%;
+}
+.prendas-all-from-guardarropa-add a{
+
+  display: inline-block;
+  color: #4e0d3a;
+  //background-color: #4e0d3a;
+  padding: 15px 0px ;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 30px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.weatherWidget {
+  display: none;
+
+}
+@media (min-width:650px) {
+
+  .guardarropas-title {
+    font-size: 4.2em;
+  }
+
+
+  .guardarropa-new-item-btn{
+    margin: auto 40%;
+  }
+
+  .prendas-all-from-guardarropa-add{
+
+    margin: 0 30%;
+  }
+
+  .btn-atuendos-all, .btn-atuendo{
+    margin: 5% 40%;
+  }
+
+  .btn-atuendo-random{
+    margin: 5% 43%;
+  }
+
+
+}
+
+
+@media(min-width:1200px) {
+
+  .container-guardarropas {
+    margin: 2% 5%;
+    justify-content: space-around;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .guardarropas-all {
+    margin: 30px 8%;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .guardarropa-unit {
+    padding: 10px 10% 10px 0;
+    text-align: center;
+  }
+
+  .guardarropa-li-unit{
+    margin-bottom: 5%;
+
+  }
+  .guardarropa-actions-icons a{
+    margin-bottom: 8%;
+  }
+
+  .show-btns-container{
+    //margin: 2% 5%;
+    justify-content: center;
+
+  }
+
+  .btn-atuendos-all{
+    margin: 2% 5%;
+    padding: 12px 20px;
+  }
+
+  .btn-atuendo-random{
+    margin: 2% 5%;
+    padding: 12px 20px;
+  }
+
+  .btn-atuendo{
+    margin: 2% 5%;
+    padding: 12px 20px;
+  }
+
+  .container-prendas-all-from-guardarropa{
+    flex-direction: column;
+  }
+
+  .prendas-all-from-guardarropa{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .prendas-all-from-guardarropa-add a{
+
+    margin: 30px 36%;
+  }
+  .weatherWidget {
+    display: block;
+
+  }
+
 }

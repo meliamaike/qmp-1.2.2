@@ -1,22 +1,19 @@
 <%= render 'header'%>
-<div id="prendas">
-  <div class="container-prendas">
-    <h2 class="prendas-title">Tus guardarropas</h2>
-    <%= link_to "Crear guardarropa", new_guardarropa_path, class:"new-item-btn" %>
-
-    <ul class="prendas-all">
-
+<div id="guardarropas">
+  <div class="container-guardarropas">
+    <h2 class="guardarropas-title">Tus guardarropas</h2>
+    <%= link_to "Crear guardarropa", new_guardarropa_path, class:"guardarropa-new-item-btn" %>
+    <ul class="guardarropas-all">
       <% if @guardarropas.blank?  %>
           <i class="fa fa-meh-o"></i> <span class="text-center">No creaste ningún guardarropas todavía </span>
-
       <% else %>
         <% @guardarropas.each do |p| %>
+          <li class="guardarropa-unit">
           <%= render 'guardarropa', guardarropa: p %>
+          </li>
         <%end%>
       <%end%>
-
     </ul>
-
   </div>
 </div>
 

@@ -10,38 +10,11 @@
 
 -->
 <%= render 'header'%>
-<div id="create-item">
-
-    <h2>Crear prenda</h2>
-      <div class="create-form">
-        <%= form_for @prenda do |f|%>
-
-          <%= f.label :prenda_tipo_id, 'Categoria de prenda' %><br/>
-          <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria,
-                                  {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
-
-          <%= f.label :prenda_tipo_id, 'Tipo de prenda' %><br/>
-          <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo,
-                                  {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
-          <%= f.select :material, Prenda.materials.keys, {}, {class:'form-items' } %>
-          <%= f.select :color_primario, Prenda.color_primarios.keys, {}, {class:'form-items' } %>
-          <%= f.select :color_secundario, Prenda.color_secundarios.keys, {}, {class:'form-items' } %>
-          <%= f.text_area :descripcion, {class:'form-items', placeholder:'Descripción' } %>
-          <%= f.label :imagen,{class:'form-items-title' }  %>
-          <%= f.file_field :imagen, {class:'btn-item-image'}%><br/>
-
-          <%= f.label :guardarropa_id, {class:'form-items-title' }%>
-          <%= f.collection_select :guardarropa_id, Guardarropa.all, :id, :nombre, {:prompt => "Elija un guardarropas", :selected => params[:guardarropa_id]}, {class:'form-items' } %>
-
-          <div class="create-form-submit-buttons">
-            <%= f.submit 'Crear', {class:'btn-item-submit'} %>
-             <%= link_to "<button>Cancelar</button>".html_safe, prendas_path(@prenda) , class: 'btn-item-cancel', required: true%>
-          </div>
-
-        <% end %>
-      </div>
-
-</div>
+<%if @guardarropa%>
+  <%= render 'form', guardarropa: @guardarropa, prenda: @prenda, text:"Crear" %>
+<%else%>
+  <%= render 'form', guardarropa: nil, prenda: @prenda, text:"Crear" %>
+<%end%>
 
 
 

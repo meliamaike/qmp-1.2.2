@@ -1,14 +1,19 @@
 <%= render 'header'%>
-<section style="background-color: blanchedalmond;">
-  <div>
+
+  <div id="atuendo-new">
+    <h2 class="btn-go-back-guardarropa"><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></h2>
+
     <div>
-      <div>
-        <h2>Crear un atuendo aleatoriamente</h2>
+      <div class="form-atuendo-new">
+        <h2 class="atuendos-title">Atuendo Random</h2>
+        <div><a type="button" class="btn-random" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a></div>
         <%= form_for @atuendo, :url => { :action => "create" } do |f| %>
 
           <%= f.hidden_field :from_generate, :value => "prueba_hidden_field" %>
+
           <div>
-            <%= f.text_field :nombre, class: 'form-items' %>
+            <%= f.label :nombre, class: 'atuendos-form-title' %>
+            <%= f.text_field :nombre, class: 'atuendos-form-items' %>
           </div>
 
           <div>
@@ -30,7 +35,7 @@
             </div>
 
             <div>
-              <%= f.label :puntaje %><br />
+              <%= f.label :puntaje, class: 'atuendos-form-title' %><br />
               <fieldset>
                 <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
                 <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
@@ -42,27 +47,27 @@
 
             <div>
               <div>
-                <%= f.label :estacion_tag %><br />
-                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+                <%= f.label :estacion_tag, class: 'atuendos-form-title' %><br />
+                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.label :tiempo_tag %><br />
-                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+                <%= f.label :tiempo_tag, class: 'atuendos-form-title' %><br />
+                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.label :ocasion_tag %><br />
-                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'form-items'})%>
+                <%= f.label :ocasion_tag, class: 'atuendos-form-title' %><br />
+                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
               </div>
             </div>
             <div>
               <div>
-                <%= f.label :descripcion %> <%= f.text_area(:descripcion, {:class => 'form-items'}) %>
+                <%= f.label :descripcion, class: 'atuendos-form-title' %> <%= f.text_area(:descripcion, {:class => 'atuendos-form-items'}) %>
               </div>
 
             </div>
             <p>
-              <%= f.submit :class => 'btn btn-default', :value => 'Guardar'%>
-              <a type="button" class="btn btn-primary" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a>
+              <%= f.submit :class => 'btn-item-submit', :value => 'Guardar'%>
+
             </p>
           </div>
         <% end %>
@@ -70,4 +75,4 @@
       </div>
     </div>
   </div>
-</section>
+<

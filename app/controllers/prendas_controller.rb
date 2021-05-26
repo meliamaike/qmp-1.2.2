@@ -51,6 +51,7 @@ class PrendasController < ApplicationController
   # get /prendas/new
   def new
     @prenda = Prenda.new
+    @prenda_prenda_tipo_id=@prenda.prenda_tipo_id
   end
 
   # put /prendas/:id
@@ -62,8 +63,6 @@ class PrendasController < ApplicationController
   # get /prendas/edit
   def edit
     @prenda = Prenda.find(params[:id])
-    # @prenda_tipos=@prenda.joins(:prenda_tipos)
-    # @prenda_tipos_tipo=@prenda_tipos.select(:tipo)
 
   end
 

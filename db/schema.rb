@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_214209) do
   create_table "prendas", force: :cascade do |t|
     t.integer "categoria"
     t.integer "material"
-    t.integer "color_primario"
-    t.integer "color_secundario"
+    t.string "color_primario"
+    t.string "color_secundario"
     t.text "descripcion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

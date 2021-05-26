@@ -1,12 +1,19 @@
-<div>
+<ul class="prenda-list">
+  <li>
+    <%=prenda.descripcion %>
+  </li>
+  <li>
+    <%=prenda.material %>
+  </li>
+</ul>
 
-  <%=prenda.descripcion %>
-  <%=prenda.material %>
-  <% prenda.color_primario %>
-
-
-    <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
-    <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Estás seguro que queres borrar la prenda?' }%>
-
+<div class="prenda-actions-icons">
+  <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
+  <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Estás seguro que queres borrar la prenda?' }%>
 
 </div>
+
+
+
+
+

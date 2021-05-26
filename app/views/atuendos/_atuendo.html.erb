@@ -1,4 +1,4 @@
-<div style="background-color: blanchedalmond;">
+<div class="atuendo-details-container">
   <% if(!atuendo.descripcion.blank?) %>
         <span>Descripcion:
           <%= atuendo.descripcion%>
@@ -19,38 +19,32 @@
     <%end%>
     </br>
     <% if(!atuendo.tiempo_tag.blank?) %>
-        <span>Horario:
+        <span>Tiempo:
           <%= atuendo.tiempo_tag%>
         </span>
     <%end%>
     </br>
       <% if(!atuendo.puntaje.blank?)%>
-        <span>Puntaje: <%=atuendo.puntaje%>⭐️
+        <span>Puntaje: <%=atuendo.puntaje%> ⭐️
         </span>
         <%end%>
   </div>
 </div>
 </div>
-<div>
-  <div>
+
+
+<div class="prendas-all-details-container">
+  <h4 class="">Prendas</h4>
     <% if !(atuendo.cabeza.blank?)  %>
       <%= render 'prenda', prenda: atuendo.cabeza %>
-
-  <%end%>
-  </div>
-  <div>
+    <%end%>
     <% if !(atuendo.torso.blank?)  %>
       <%= render 'prenda', prenda: atuendo.torso %>
     <%end%>
-  </div>
-  <div>
     <% if !(atuendo.piernas.blank?)  %>
       <%= render 'prenda', prenda: atuendo.piernas %>
     <%end%>
-  </div>
-  <div>
     <% if !(atuendo.pies.blank?)  %>
       <%= render 'prenda', prenda: atuendo.pies %>
     <%end%>
-  </div>
 </div>

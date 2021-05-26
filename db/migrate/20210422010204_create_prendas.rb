@@ -8,8 +8,8 @@ class CreatePrendas < ActiveRecord::Migration[6.0]
       t.integer :categoria
       t.integer :tipo
       t.integer :material
-      t.integer :color_primario
-      t.integer :color_secundario
+      t.string :color_primario
+      t.string :color_secundario
       t.text :descripcion
 
       t.timestamps

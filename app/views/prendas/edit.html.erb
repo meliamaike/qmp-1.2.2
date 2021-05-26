@@ -1,33 +1,41 @@
 <%= render 'header'%>
+<%#= render 'form', prenda: @prenda,text:"Editar" %>
+
+
 <div id="create-item">
   <div class="create-item-container">
     <h2 class="create-title-contact">Editar prenda</h2>
     <div class="create-form">
       <%= form_for @prenda do |f|%>
-
         <%= f.label :prenda_tipo_id, 'Categoria de prenda' %><br/>
         <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria,
                                 {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
-
         <%= f.label :prenda_tipo_id, 'Tipo de prenda' %><br/>
         <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo,
                                 {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
         <%= f.select :material, Prenda.materials.keys, {}, {class:'form-items' } %>
-        <%= f.select :color_primario, Prenda.color_primarios.keys, {}, {class:'form-items' } %>
-        <%= f.select :color_secundario, Prenda.color_secundarios.keys, {}, {class:'form-items' } %>
+
+        <%= f.label :color_primario,{class:'form-items-title' }  %>
+        <%= f.color_field :color_primario%>
+
+        <%= f.label :color_secundario,{class:'form-items-title' }  %>
+        <%= f.color_field :color_secundario %><br>
+
         <%= f.text_area :descripcion, {class:'form-items', placeholder:'Descripción' } %>
         <% if @prenda.imagen.attached? %>
           <%= f.label :imagen,{class:'form-items-title' }  %>
           <%= image_tag(@prenda.imagen) %>
         <%end %>
         <div class="edit-form-submit-buttons">
-        <%= f.submit 'Guardar cambios', {class:'btn-save-changes'} %>
-        <%= link_to "<button>Cancelar</button>".html_safe, prendas_path(@prenda) , class: 'btn-save-changes-cancel'%>
+          <%= f.submit 'Guardar cambios', {class:'btn-save-changes'} %>
+          <%= link_to "<button>Cancelar</button>".html_safe, prendas_path(@prenda) , class: 'btn-save-changes-cancel'%>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
+
 
 
 
