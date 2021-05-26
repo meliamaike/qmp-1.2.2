@@ -4,9 +4,12 @@
     <h2><%= @prenda.descripcion %></h2>
 <!--    <h5>Categoría: <%#= @prenda.categoria %></h5>-->
     <h5>Material: <%= @prenda.material %></h5>
-    <h5>Color primario: <%= @prenda.color_primario %></h5>
-    <h5>Color secundario: <%= @prenda.color_secundario %></h5>
-
+    <% if (!@prenda.color_primario.blank?) %>
+    <h5>Color primario: <input type="color" value=<%= @prenda.color_primario %> disabled="true"></h5>
+    <%end%>
+    <% if (!@prenda.color_secundario.blank?) %>
+      <h5>Color secundario: <input type="color" value=<%= @prenda.color_secundario %> disabled="true"></h5>
+    <%end%>
     <div class="conteiner-btn-edit-delete-prenda">
       <%= link_to "<button>Editar</button>".html_safe, edit_prenda_path(@prenda),class:'btn-edit-prenda' %>
       <%= link_to "<button>Borrar</button>".html_safe, @prenda, method: "delete", data: {confirm: 'Estas seguro?'}, class:'btn-delete-prenda' %>
