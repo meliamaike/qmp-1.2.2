@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
   #Cuando el controller esta vacio, renderiza la vista
+    # redirect_to action: :index
   end
 
   def create

@@ -1,7 +1,27 @@
-PrendaTipo.create categoria: :cabeza, tipo: :gorro
-PrendaTipo.create categoria: :piernas, tipo: :pantalon
-PrendaTipo.create categoria: :torso, tipo: :remera
-PrendaTipo.create categoria: :pies, tipo: :zapatillas
+
+PrendaTipo.create(categoria: 0, tipo:  0)
+PrendaTipo.create(categoria: 0, tipo:  1)
+PrendaTipo.create(categoria: 1, tipo: 10)
+PrendaTipo.create(categoria: 1, tipo: 11)
+PrendaTipo.create(categoria: 1, tipo: 12)
+PrendaTipo.create(categoria: 1, tipo: 13)
+PrendaTipo.create(categoria: 1, tipo: 14)
+PrendaTipo.create(categoria: 1, tipo: 15)
+PrendaTipo.create(categoria: 1, tipo: 16)
+PrendaTipo.create(categoria: 1, tipo:  2)
+PrendaTipo.create(categoria: 1, tipo:  3)
+PrendaTipo.create(categoria: 1, tipo:  4)
+PrendaTipo.create(categoria: 2, tipo: 17)
+PrendaTipo.create(categoria: 2, tipo: 18)
+PrendaTipo.create(categoria: 2, tipo: 19)
+PrendaTipo.create(categoria: 2, tipo: 20)
+PrendaTipo.create(categoria: 2, tipo:  5)
+PrendaTipo.create(categoria: 3, tipo:  6)
+PrendaTipo.create(categoria: 3, tipo:  7)
+PrendaTipo.create(categoria: 3, tipo:  8)
+PrendaTipo.create(categoria: 3, tipo:  9)
+PrendaTipo.create(categoria: 3, tipo: 21)
+PrendaTipo.create(categoria: 3, tipo: 22)
 
 vintage=Guardarropa.create! nombre: "Estilo vintage"
 lluvia=Guardarropa.create! nombre: "Dia de lluvia"
@@ -16,11 +36,6 @@ sombrero=Prenda.create! descripcion: "gorro piluso", color_primario: :beige, gua
 
 
 
-# remera.prenda_tipo << p3
-# pantalon.prenda_tipo << p2
-# sombrero.prenda_tipo << p1
-# zapatillas.prenda_tipo << p4
-
 
 # playa.prendas << sombrero
 lluvia.prendas << pantalon
@@ -30,7 +45,3 @@ lluvia.prendas << remera
 # vintage.prendas << pollera
 
 
-
-# atuendo_1=Atuendo.create! torso_id:1, cabeza_id:1, piernas_id:1, pies_id:1, puntaje: 1, estacion_tag:1, tiempo_tag:1, ocasion_tag:1, guardarropa_id:1, nombre: "pruebita lm"
-#
-# vintage.atuendos << atuendo_1

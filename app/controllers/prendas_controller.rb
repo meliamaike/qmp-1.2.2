@@ -19,8 +19,8 @@ class PrendasController < ApplicationController
 
   # get /prendas/
   def index
-    # @prendas = Prenda.all
-    @prendas=current_user.prendas
+    @prendas = Prenda.all
+    #@prendas=current_user.prendas
 
   end
 
@@ -43,9 +43,9 @@ class PrendasController < ApplicationController
   # get /prendas/:id
   def show
 
-    if !(set_prenda.user==current_user)
-      redirect_to login_path, notice: t(:error)
-    end
+    # if !(set_prenda.user==current_user)
+    #   redirect_to login_path, notice: t(:error)
+    # end
 
   end
 
@@ -57,7 +57,7 @@ class PrendasController < ApplicationController
   def create
 
     ####### agregue esto-->
-    @prenda.user= current_user
+        #@prenda.user= current_user
     #######
 
     Prenda.create! prenda_params # nota: prenda_params NO viene con el controller,
@@ -104,11 +104,11 @@ class PrendasController < ApplicationController
     params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id)
   end
 
-  def validar_usuario
-    if !(Prenda.find(params[:id]).user == current_user)
-      render :index, status: 403
-    end
-  end
+  # def validar_usuario
+  #   if !(Prenda.find(params[:id]).user == current_user)
+  #     render :index, status: 403
+  #   end
+  # end
 end
 
 

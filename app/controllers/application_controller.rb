@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  before_action :validate_logged_user!
-
-  def validate_logged_user!
-    if !current_user
-      redirect_to '/login'
-    end
-  end
+  # before_action :validate_logged_user!
+  #
+  # def validate_logged_user!
+  #   if !current_user
+  #     redirect_to "/guardarropas"
+  #   end
+  # end
 
   def current_user
 

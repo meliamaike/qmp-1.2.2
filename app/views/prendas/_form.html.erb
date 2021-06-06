@@ -4,13 +4,17 @@
   <div class="create-form">
     <%= form_for @prenda do |f|%>
 
-      <%= f.label :prenda_tipo_id, 'Categoria de prenda' ,{class:'form-items-title'}%><br/>
-      <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria,
-                              {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
+      <%= f.label :prenda_tipo_id, 'Categoria de prenda' , {class:'form-items-title'} %><br/>
+
+      <%= f.select :material, PrendaTipo.categoria.keys, {},{class:'form-items',required: true}%>
+
+
+      <%#= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria, {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
 
       <%= f.label :prenda_tipo_id, 'Tipo de prenda' , {class:'form-items-title'}%><br/>
-      <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo,
-                              {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
+
+     <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo, {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
+
       <%= f.select :material, Prenda.materials.keys, {}, {class:'form-items' } %>
 
       <%= f.label :color_primario,{class:'form-items-title'}  %>
