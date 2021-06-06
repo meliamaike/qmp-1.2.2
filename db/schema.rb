@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_214209) do
+ActiveRecord::Schema.define(version: 2021_06_05_235827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,15 +48,19 @@ ActiveRecord::Schema.define(version: 2021_05_24_214209) do
     t.integer "tiempo_tag"
     t.integer "ocasion_tag"
     t.text "descripcion"
+    t.bigint "user_id"
     t.index ["cabeza_id"], name: "index_atuendos_on_cabeza_id"
     t.index ["guardarropa_id"], name: "index_atuendos_on_guardarropa_id"
     t.index ["piernas_id"], name: "index_atuendos_on_piernas_id"
     t.index ["pies_id"], name: "index_atuendos_on_pies_id"
     t.index ["torso_id"], name: "index_atuendos_on_torso_id"
+    t.index ["user_id"], name: "index_atuendos_on_user_id"
   end
 
   create_table "guardarropas", force: :cascade do |t|
     t.text "nombre"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_guardarropas_on_user_id"
   end
 
   create_table "prenda_tipos", force: :cascade do |t|
@@ -74,8 +78,19 @@ ActiveRecord::Schema.define(version: 2021_05_24_214209) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "guardarropa_id"
     t.bigint "prenda_tipo_id"
+    t.bigint "user_id"
     t.index ["guardarropa_id"], name: "index_prendas_on_guardarropa_id"
     t.index ["prenda_tipo_id"], name: "index_prendas_on_prenda_tipo_id"
+    t.index ["user_id"], name: "index_prendas_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

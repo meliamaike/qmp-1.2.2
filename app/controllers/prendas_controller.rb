@@ -10,10 +10,17 @@
 class PrendasController < ApplicationController
 
   before_action :set_prenda, only: [:show, :update, :edit, :destroy]
+  #skip_before_action :validate_logged_user, only: [:index]
+
+  #dado que hago un validate_logged_user--> debo ahora chequear que hay al menos un usuario
+
+  #before_action :validar_usuario, only: [:show, :edit, :update, :destroy]
+
 
   # get /prendas/
   def index
-    @prendas = Prenda.all
+    # @prendas = Prenda.all
+    @prendas=current_user.prendas
 
   end
 
@@ -35,6 +42,11 @@ class PrendasController < ApplicationController
 
   # get /prendas/:id
   def show
+
+    if !(set_prenda.user==current_user)
+      redirect_to login_path, notice: t(:error)
+    end
+
   end
 
   # recordatorio: esto es IGUAL a lo anterior, con la salvedad
@@ -43,6 +55,11 @@ class PrendasController < ApplicationController
 
   # post /prendas
   def create
+
+    ####### agregue esto-->
+    @prenda.user= current_user
+    #######
+
     Prenda.create! prenda_params # nota: prenda_params NO viene con el controller,
                                  # lo tenés que definir vos
     redirect_to action: :index
@@ -63,7 +80,6 @@ class PrendasController < ApplicationController
   # get /prendas/edit
   def edit
     @prenda = Prenda.find(params[:id])
-
   end
 
 
@@ -78,7 +94,6 @@ class PrendasController < ApplicationController
 
   def set_prenda
     @prenda = Prenda.find(params[:id])
-
   end
 
   def prenda_params
@@ -88,4 +103,12 @@ class PrendasController < ApplicationController
     # y el permit, los campos particulares que nos interesa admitir para editar/crear.
     params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id)
   end
+
+  def validar_usuario
+    if !(Prenda.find(params[:id]).user == current_user)
+      render :index, status: 403
+    end
+  end
 end
+
+
