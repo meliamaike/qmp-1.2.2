@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #4e0d3a;
+  font-size: 10px;
+}
+
+ul,ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+#login-section{
+  background: white;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right:13px;
+  padding-left:13px;
+}
+
+.login-title-contact{
+  color: #4e0d3a;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 40px;
+}
+
+.login-form{
+
+}
+
+.login-items{
+  width: 100%;
+  margin-bottom: 9px;
+  padding: 15px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+
+}
+
+.login-buttons{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+
+.btn-login{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4e0d3a;
+  padding: 12px 5px;
+  cursor: pointer;
+  background-color:rgb(243,199,214) ;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  width: 50%;
+}
+
+.sign-up-question{
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  //border: 1px solid #999999;
+  margin-top: 25px;
+}
+
+.sign-up-question a{
+  color:#720d5d;
+  font-weight: bold;
+}
+
+.forgot-password a{
+  font-weight: 400;
+  color:#720d5d;
+  font-size: 14px;
+}
+.forgot-password{
+  text-align:right;
+}
+
+
+@media (min-width:650px) {
+#login-section{
+  padding-top: 8%;
+  padding-right: 15%;
+  padding-left: 15%;
+  height: 57vh;
+}
+  .btn-login{
+    width: 40%;
+  }
+}
+
+@media(min-width:1200px) {
+
+  #login-section{
+    padding-top: 3%;
+    padding-right: 35%;
+    padding-left: 35%;
+    height: auto;
+  }
+
+  .login-title-contact{
+
+    font-size: 5em;
+    padding-top: 5%;
+  }
+
+
+  .btn-login{
+    font-size: 1.7em ;
+    width: 40%;
+  }
+
+  .sign-up-question{
+    font-size: 18px;
+    border: 1px solid #999999;
+
+  }
+  .forgot-password a{
+    font-size: 16px;
+  }
+
+  .login-buttons{
+    padding-bottom: 10%;
+
+  }
+
+
+}

@@ -8,9 +8,6 @@
 
       <%= f.select :material, PrendaTipo.categoria.keys, {},{class:'form-items',required: true}%>
 
-
-      <%#= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria, {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
-
       <%= f.label :prenda_tipo_id, 'Tipo de prenda' , {class:'form-items-title'}%><br/>
 
      <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo, {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>

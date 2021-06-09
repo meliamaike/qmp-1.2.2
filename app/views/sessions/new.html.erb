@@ -1,28 +1,24 @@
-<section class="login-section" style="background-color: bisque">
-  <div class="login-form">
-    <h1>Login</h1>
-    <%= form_tag sessions_path do |_| %>
-      <p id="alert"> <%= alert %> </p>
-      <div class="form-group row campo">
-        <%= label_tag :email ,"Email: " , :class => "col-sm col-form-label" %>
-        <div  class="col-">
-          <%= text_field_tag :email , nil , html: {class: 'form-control'} %>
+<%= stylesheet_link_tag "sessions", :media => "all" %>
+<%= render 'header'%>
+<div id="login-section">
+  <h2 class="login-title-contact">Iniciar Sesión</h2>
+    <div class="login-form">
+
+      <%= form_tag sessions_path do |_| %>
+        <p id="alert"> <%= alert %> </p>
+
+         <%= text_field_tag :email , nil , class: 'login-items' ,:placeholder => 'Email'%>
+         <%= password_field_tag :password , nil , class: 'login-items', :placeholder => 'Contraseña' %>
+
+        <div class="forgot-password">
+          <a href="">¿Olvidaste tu contraseña?</a>
         </div>
-      </div>
-      <div class="form-group row campo">
-        <%= label_tag :password ,"Contraseña: ", :class => "col-sm col-form-label"%>
-        <div class="col-">
-          <%= password_field_tag :password , nil , html: {class: 'form-control' }%>
+        <div class="login-buttons">
+          <%= submit_tag "Login" , :class => "btn-login" %>
         </div>
-      </div>
-      <div class="form-group row center">
-        <div class="col- center">
-          <%= submit_tag "Login" , :class => "btn btn-success" %>
+        <div class="sign-up-question">
+          <p>¿No tenés cuenta? <a href="/users/new">Regístrate</a>
         </div>
-      </div>
-      <div class="form-group row center nuevo-user">
-        <p>Sos nuevo? <a href="/users/new">Crea tu cuenta</a>
-      </div>
-    <% end %>
-  </div>
-</section>
+      <% end %>
+    </div>
+</div>
