@@ -1,3 +1,131 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #4e0d3a;
+  font-size: 10px;
+}
+
+ul,ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+#sign-up-section{
+  background: #f3c7d6;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right:13px;
+  padding-left:13px;
+}
+
+.sign-up-items{
+  width: 100%;
+  margin-bottom: 9px;
+  padding: 15px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.sign-up-buttons{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+
+.btn-sign-up{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(243,199,214);
+  padding: 12px 5px;
+  cursor: pointer;
+  background-color:#4e0d3a;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  width: 50%;
+}
+
+.sign-up-title{
+  color: #4e0d3a;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+.back-link{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  padding-top: 6%;
+  //text-transform: uppercase;
+}
+
+.back-link a{
+  color: black;
+  font-size: 12px;
+
+}
+
+@media (min-width:650px) {
+  #sign-up-section{
+    padding-top: 8%;
+    padding-right: 15%;
+    padding-left: 15%;
+    height: 57vh;
+  }
+  .btn-sign-up{
+    width: 40%;
+  }
+  .back-link a{
+    font-size: 17px;
+  }
+}
+
+@media(min-width:1200px) {
+
+  #sign-up-section{
+    padding-top: 3%;
+    padding-right: 35%;
+    padding-left: 35%;
+    height: auto;
+  }
+
+  .sign-up-title{
+
+    font-size: 5em;
+    padding-top: 5%;
+  }
+
+
+  .btn-sign-up{
+    font-size: 1.7em ;
+    width: 40%;
+  }
+
+
+  .sign-up-buttons{
+    padding-bottom: 10%;
+
+  }
+
+
+}

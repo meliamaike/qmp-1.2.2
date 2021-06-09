@@ -44,10 +44,6 @@ img {
   padding-top: 40px;
 }
 
-.login-form{
-
-}
-
 .login-items{
   width: 100%;
   margin-bottom: 9px;
@@ -98,6 +94,14 @@ img {
 }
 .forgot-password{
   text-align:right;
+}
+
+#alert{
+  color: #e30425;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
 
 

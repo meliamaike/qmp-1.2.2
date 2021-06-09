@@ -1,9 +1,8 @@
-<h1>Crea tu cuenta</h1>
 
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(user.errors.count, "error") %> No se puede guardar este usuario:</h2>
 
       <ul>
         <% user.errors.full_messages.each do |message| %>
@@ -14,21 +13,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, :placeholder => 'Email', :class=>'sign-up-items' %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password ,:placeholder => 'Contraseña',:class=>'sign-up-items'%>
   </div>
 
   <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, :placeholder => 'Volvé a escribir la contraseña',:class=>'sign-up-items'%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="sign-up-buttons">
+    <%= form.submit 'Registrarme', {class: 'btn-sign-up'}%>
   </div>
 <% end %>

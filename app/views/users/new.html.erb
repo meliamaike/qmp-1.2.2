@@ -1,5 +1,10 @@
-<h1>New User</h1>
+<%= render 'header'%>
+<div id="sign-up-section">
+  <h2 class="sign-up-title">Registrarme</h2>
+  <%= render 'form', user: @user %>
+  <div class="back-link">
+    <%= link_to 'Volver atrás', users_path %>
+  </div>
+</div>
 
-<%= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
