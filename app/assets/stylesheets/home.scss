@@ -27,9 +27,22 @@ img {
   background-color: #4e0d3a;
 }
 
-.logo {
-  width: 18%;
-  margin: 3%;
+.logo-2-img{
+  width: 50%;
+  padding: 10px 5px 5px 19%;
+
+}
+
+.navigation-right{
+  font-size: 3em;
+  //margin: 3%;
+  padding: 13px 5px 5px 21%;
+
+}
+
+.navigation-right a{
+  color: #e30425;
+
 }
 
 .main-nav {
@@ -77,12 +90,12 @@ img {
 
 }
 .toggle-nav {
-  font-size: 4em;
+  font-size: 3.3em;
   color: #e30425;
   flex: 1 1 0%;
   justify-content: flex-end;
   display: flex;
-  margin: auto 20px;
+  padding: 15px 10px 5px 20px;
 }
 
 .weatherWidget {
@@ -495,6 +508,22 @@ img {
 /*como minimo el viewport tiene 650px de ancho*/
 @media (min-width:650px) {
 
+  .logo-2-img{
+    width: 41%;
+    padding: 23px 5px 10px 20%;
+
+  }
+
+  .navigation-right{
+    font-size: 5.7em;
+    //margin: 3%;
+    padding: 29px 5px 5px 31%;
+
+  }
+  .toggle-nav {
+    font-size: 5.7em;
+    padding: 33px 115px 5px 35px;
+  }
   .banner {
     display:block; /*para sacar el display none, puedo poder cualquier otro valor. pongo block porque quiero que se comporte como un bloque*/
     margin: 30px 0.83%;/*top-bottoms/right-left*/
@@ -619,6 +648,30 @@ img {
     margin: auto; /*lo centro de manera horizontal*/
   }
 
+
+  .logo-2-img{
+    width: 22%;
+    padding: 21px 5px 5px 12%;
+
+  }
+
+  .navigation-left{
+    width: 45%;
+    padding-left: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .navigation-right{
+    font-size: 3.5em;
+    padding: 21px 33px 5px 41%;
+    line-height: 50%;
+
+  }
+  .toggle-nav {
+
+    padding: 35px 75px 5px 20px;
+  }
+
   .main-nav {
     width: 100%;
     height: auto; /*como no sabemos cuanto quiero que tenga le pongo height.auto*/
@@ -626,15 +679,15 @@ img {
     left: 0;
     top: 0;
     background-color: transparent; /*siempre que quiera eliminar un color debo poner tranparent*/
-
     margin: auto;
+
   }
 
   .main-nav li {
     float: left;
     width: 15%;
-    margin: 0 0 1% 4%;
-    font-size: 15px;
+    margin: 0 3% 1% 0%;
+    font-size: 11px;
   }
 
   .main-nav a {
