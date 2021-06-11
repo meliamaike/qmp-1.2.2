@@ -22,6 +22,32 @@ img {
   width: 100%;
 }
 
+logo-2-img{
+  width: 100%;
+  padding: 10px 5px 5px 19%;
+
+}
+
+.navigation-right{
+  font-size: 3em;
+  //margin: 3%;
+  padding: 13px 5px 5px 21%;
+
+}
+
+.navigation-right a{
+  color: #e30425;
+
+}
+
+.toggle-nav {
+  font-size: 3.3em;
+  color: #e30425;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  display: flex;
+  padding: 15px 10px 5px 20px;
+}
 
 .guardarropas-show-container{
   background-color: rgb(243,199,214);
@@ -268,9 +294,9 @@ img {
 
     margin: 30px 36%;
   }
-  .weatherWidget {
-    display: block;
-
-  }
+  //.weatherWidget {
+  //  display: block;
+  //
+  //}
 
 }
