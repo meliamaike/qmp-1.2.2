@@ -9,7 +9,6 @@ class AtuendosController < ApplicationController
     @atuendos=Atuendo.where(guardarropa: @guardarropa)
     @atuendos= @atuendos.filter_by_estacion(params[:estacion_tag].presence).filter_by_ocasion(params[:ocasion_tag].presence).filter_by_tiempo(params[:tiempo_tag].presence).ordered_by_puntaje(params[:puntaje_order].presence)
     filter_memory
-
   end
 
   def edit

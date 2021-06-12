@@ -55,6 +55,25 @@ img {
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
+.atuendos-filter{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.atuendos-filter-item{
+  width: 100%;
+  margin-bottom: 9px;
+  padding: 15px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
 .text-no-atuendo{
   font-size: 2.5em;
   text-align: center;
