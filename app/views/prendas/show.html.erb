@@ -1,7 +1,6 @@
 <div class="prenda-card">
   <div class="prenda-data">
     <h2><%= @prenda.descripcion %></h2>
-<!--    <h5>Categoría: <%#= @prenda.categoria %></h5>-->
     <h5>Material: <%= @prenda.material %></h5>
     <% if (!@prenda.color_primario.blank?) %>
     <h5>Color primario: <input type="color" value=<%= @prenda.color_primario %> disabled="true"></h5>

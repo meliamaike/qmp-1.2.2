@@ -45,6 +45,9 @@ PrendaTipo.create(categoria: 3, tipo:  9)
 PrendaTipo.create(categoria: 3, tipo: 21)
 PrendaTipo.create(categoria: 3, tipo: 22)
 
+
+
+
 admin=Guardarropa.create! nombre: "Admin guardarropas" , user_id: 1
 vintage=Guardarropa.create! nombre: "Estilo vintage",user_id: 2
 lluvia=Guardarropa.create! nombre: "Dia de lluvia",user_id: 3
@@ -53,12 +56,12 @@ playa=Guardarropa.create! nombre: "playa",user_id: 4
 
 
 
-remera=Prenda.create! descripcion: "remera para dormir", material: :algodon, color_primario: "#CCA9DD",color_secundario: "#F9EAC3", guardarropa_id: 1, prenda_tipo_id: 1
-pantalon=Prenda.create! descripcion: "pantalon para dormir", material: :lino, color_primario: "#F9EAC3", color_secundario: "#CCA9DD", guardarropa_id: 1, prenda_tipo_id: 1
+remera=Prenda.create! descripcion: "remera para dormir", material: :algodon, color_primario: "#CCA9DD",color_secundario: "#F9EAC3", guardarropa_id: 1, prenda_tipo_id: 1, user_id: 2
+pantalon=Prenda.create! descripcion: "pantalon para dormir", material: :lino, color_primario: "#F9EAC3", color_secundario: "#CCA9DD", guardarropa_id: 1, prenda_tipo_id: 1, user_id: 2
 # pollera=Prenda.create! tipo: :pollera, material: :seda, color_primario: :azul, color_secundario: :naranja
 # camisa=Prenda.create! tipo: :camisa, material: :poliester, color_primario: :amarillo
-zapatillas=Prenda.create! descripcion: "vans black", color_primario: :negro, guardarropa_id: 1, prenda_tipo_id: 1
-sombrero=Prenda.create! descripcion: "gorro piluso", color_primario: :beige, guardarropa_id: 1, prenda_tipo_id: 1
+zapatillas=Prenda.create! descripcion: "vans black", material: :cuero,color_primario: :negro,color_secundario: "#E6EAC3", guardarropa_id: 1, prenda_tipo_id: 1, user_id: 2
+sombrero=Prenda.create! descripcion: "gorro piluso", material: :lino,color_primario: :beige,color_secundario: "rosita", guardarropa_id: 1, prenda_tipo_id: 1, user_id: 2
 
 
 

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if current_user && current_user.admin?
       @users = User.all
     else
-      flash[:error]="Error 401, usted no tiene permisos"
+      flash[:error]="Usted no tiene permisos"
       redirect_to root_path
     end
   end

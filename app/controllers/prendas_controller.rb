@@ -10,7 +10,9 @@
 class PrendasController < ApplicationController
 
   before_action :require_user
-  before_action :set_prenda, only: [:show, :update, :edit, :destroy]
+  # before_action :set_prenda, only: [:show, :update, :edit, :destroy]
+  before_action :validar_user, only: [:show, :edit, :update, :destroy]
+
 
 
   # get /prendas/
@@ -38,9 +40,9 @@ class PrendasController < ApplicationController
   # get /prendas/:id
   def show
 
-    # if !(set_prenda.user==current_user)
-    #   redirect_to login_path, notice: t(:error)
-    # end
+    if !(Prenda.find(params[:id]).user==current_user)
+      redirect_to login_path, notice: t(:error)
+    end
 
   end
 
@@ -97,9 +99,9 @@ class PrendasController < ApplicationController
     params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id)
   end
 
-  def validar_usuario
-    if !(set_prenda.user == current_user)
-      render :index, status: 403
+  def validar_user
+    if !(Prenda.find(params[:id]).user == current_user)
+      render :index
     end
   end
 

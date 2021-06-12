@@ -9,7 +9,7 @@
           <%= form_for @atuendo , :url => { :action => "create" } do |f| %>
             <div>
               <%= f.label :nombre , class: 'atuendos-form-title'%>
-              <%= f.text_field :nombre, class: 'atuendos-form-items' %>
+              <%= f.text_field :nombre, class: 'atuendos-form-items', required: true %>
             </div>
             <div>
               <div>
@@ -25,8 +25,9 @@
 
                   </div>
                 <% else %>
+
                   <% @prendas_cabeza.each do |p| %>
-                    <%= f.radio_button :cabeza, p.id, required: false %>
+                    <%= f.radio_button :cabeza, p.id, required: true %>
                     <%= render 'prenda', prenda: p %>
                     <%= f.hidden_field :cabeza_id, :value => p.id %>
 
@@ -45,7 +46,7 @@
                 <% else %>
                   <% @prendas_torso.each do |p| %>
                     <div>
-                      <%= f.radio_button :torso, p.id, required: false %>
+                      <%= f.radio_button :torso, p.id, required: true %>
                       <%= render 'prenda', prenda: p %>
                       <%= f.hidden_field :torso_id, :value => p.id %>
                     </div>
@@ -64,7 +65,7 @@
                   </div>
                 <% else %>
                   <% @prendas_piernas.each do |p| %>
-                    <%= f.radio_button :piernas, p.id, required: false %>
+                    <%= f.radio_button :piernas, p.id, required: true %>
                     <%= render 'prenda', prenda: p %>
                     <%= f.hidden_field :piernas_id, :value => p.id %>
                   <%end%>
@@ -72,7 +73,7 @@
               </div>
               <div>
                 <h3 class="atuendos-form-title">Pies</h3>
-                <% if @prendas_pies.blank?  %>
+                <% if @prendas_pies.blank? %>
                   <div>
                     <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
                     <div>
@@ -81,7 +82,7 @@
                   </div>
                 <% else %>
                   <% @prendas_pies.each do |p| %>
-                    <%= f.radio_button :pies, p.id, required: false %>
+                    <%= f.radio_button :pies, p.id, required: true %>
                     <%= render 'prenda', prenda: p %>
                     <%= f.hidden_field :pies_id, :value => p.id %>
                   <%end%>
@@ -91,7 +92,13 @@
 
             <div>
               <%= f.label :puntaje, class: 'atuendos-form-title' %><br />
+
               <fieldset>
+                <%= f.radio_button :puntaje, 10 , {id: "star5"}%> <%= label_tag(:star5, "10 ⭐️") %>
+                <%= f.radio_button :puntaje, 9 , {id: "star5"}%> <%= label_tag(:star5, "9 ⭐️") %>
+                <%= f.radio_button :puntaje, 8 , {id: "star5"}%> <%= label_tag(:star5, "8 ⭐️") %>
+                <%= f.radio_button :puntaje, 7 , {id: "star5"}%> <%= label_tag(:star5, "7 ⭐️") %>
+                <%= f.radio_button :puntaje, 6 , {id: "star5"}%> <%= label_tag(:star5, "6 ⭐️") %>
                 <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
                 <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
                 <%= f.radio_button :puntaje, 3, {id: "star3"} %><%= label_tag(:star3, "3 ⭐") %>
@@ -101,21 +108,18 @@
             </div>
             <div>
               <div>
-                <%= f.label :estacion_tag, class: 'atuendos-form-title' %><br />
-                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{required:false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
+                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{ :prompt => "Seleccione la estacion"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.label :tiempo_tag, class: 'atuendos-form-title' %><br />
-                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
+                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{:prompt => "Seleccione el horario del día"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.label :ocasion_tag, class: 'atuendos-form-title' %><br />
-                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{required: false, :prompt => "seleccione"}, {:class => 'atuendos-form-items'})%>
+                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
             </div>
             <div>
               <div>
-                <%= f.label :descripcion, class: 'atuendos-form-title' %> <%= f.text_area(:descripcion, {:class => 'form-items'}) %>
+                <%= f.text_area(:descripcion,{:class => 'form-items', required:true,placeholder:'Descripción'}) %>
               </div>
 
             </div>

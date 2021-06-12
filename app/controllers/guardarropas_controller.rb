@@ -1,6 +1,6 @@
 class GuardarropasController < ApplicationController
   before_action :require_user
-  # before_action :set_guardarropa, only: [:show, :update, :edit, :destroy]
+  before_action :set_guardarropa, only: [:show, :update, :edit, :destroy]
   before_action :validar_usuario, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -50,10 +50,10 @@ class GuardarropasController < ApplicationController
 
   private
 
-  # def set_guardarropa
-  #   @guardarropa = Guardarropa.find(params[:id])
-  #
-  # end
+  def set_guardarropa
+    @guardarropa = Guardarropa.find(params[:id])
+
+  end
 
   def guardarropa_params
     params.require(:guardarropa).permit(:guardarropa_id, :nombre)

@@ -5,10 +5,9 @@
     <h2 class="create-title-contact">Editar prenda</h2>
     <div class="create-form">
       <%= form_for @prenda do |f|%>
-        <%= f.label :prenda_tipo_id, 'Categoria de prenda' %><br/>
-        <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :categoria,
-                                {:prompt => "Elija la categoria de prenda", :selected => params[:prenda_tipo_id]}, {class:'form-items' } %>
-        <%= f.label :prenda_tipo_id, 'Tipo de prenda' %><br/>
+
+        <%= f.select :categoria, PrendaTipo.categoria.keys, {prompt: "Elija la categoria de prenda"},class:'form-items',required: true%>
+
         <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo,
                                 {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
         <%= f.select :material, Prenda.materials.keys, {}, {class:'form-items' } %>
@@ -20,6 +19,7 @@
         <%= f.color_field :color_secundario %><br>
 
         <%= f.text_area :descripcion, {class:'form-items', placeholder:'Descripción' } %>
+
         <% if @prenda.imagen.attached? %>
           <%= f.label :imagen,{class:'form-items-title' }  %>
           <%= image_tag(@prenda.imagen) %>

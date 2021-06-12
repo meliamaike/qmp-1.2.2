@@ -16,5 +16,17 @@ class Atuendo < ApplicationRecord
   enum tiempo_tag: [:dia, :noche]
   enum ocasion_tag: [:formal, :informal]
 
+  validates :estacion_tag, presence: true
+  validates :tiempo_tag, presence: true
+  validates :ocasion_tag, presence: true
+  validates_inclusion_of :puntaje, :in => 0..10, presence:true
+
+  validates :torso_id, presence: true
+  validates :piernas_id, presence: true
+  validates :pies_id, presence: true
+  validates :cabeza_id, presence: true
+
+  has_one :user, through: :guardarropa
+
 
 end
