@@ -4,6 +4,8 @@ class Guardarropa < ApplicationRecord
 
       has_many :atuendos
 
+      belongs_to :user
+
 # esto lo hago para poder traerme las categorias del prenda tipo
   def prendas_cabeza
     self.prendas.select{|p| p.prenda_tipo.categoria=="cabeza"}

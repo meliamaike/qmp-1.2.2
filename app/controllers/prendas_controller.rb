@@ -9,18 +9,13 @@
 #
 class PrendasController < ApplicationController
 
+  before_action :require_user
   before_action :set_prenda, only: [:show, :update, :edit, :destroy]
-  #skip_before_action :validate_logged_user, only: [:index]
-
-  #dado que hago un validate_logged_user--> debo ahora chequear que hay al menos un usuario
-
-  #before_action :validar_usuario, only: [:show, :edit, :update, :destroy]
 
 
   # get /prendas/
   def index
-    @prendas = Prenda.all
-    #@prendas=current_user.prendas
+    @prendas=current_user.prendas
 
   end
 
@@ -56,13 +51,10 @@ class PrendasController < ApplicationController
   # post /prendas
   def create
 
-    ####### agregue esto-->
-        #@prenda.user= current_user
-    #######
-
-    Prenda.create! prenda_params # nota: prenda_params NO viene con el controller,
-                                 # lo tenés que definir vos
-    redirect_to action: :index
+    # nota: prenda_params NO viene con el controller,lo tenés que definir vos
+    @prenda=Prenda.create(prenda_params)
+    @prenda.user_id = current_user
+    redirect_to @guardarropa
   end
 
   # get /prendas/new
@@ -104,11 +96,13 @@ class PrendasController < ApplicationController
     params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id)
   end
 
-  # def validar_usuario
-  #   if !(Prenda.find(params[:id]).user == current_user)
-  #     render :index, status: 403
-  #   end
-  # end
+  def validar_usuario
+    if !(set_prenda.user == current_user)
+      render :index, status: 403
+    end
+  end
+
+
 end
 
 

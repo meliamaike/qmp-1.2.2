@@ -1,8 +1,26 @@
 <div id="atuendos">
   <div class="btn-go-back-guardarropa" ><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Volver a Guardarropa</a></div>
   <h2 class="atuendos-title">Atuendos</h2>
-  <ul class="atuendos-all">
+  <div class="">
+    <div class="">
+      <%= form_tag guardarropa_atuendos_path, method: :get do %>
+        <%= label_tag :estacion_tag, "Filtrar por:" %>
+        <%= select_tag :estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Estación', :class => ''%>
+        <%= select_tag :tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Tiempo',  :class => ''%>
+        <%= select_tag :ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formalidad',  :class => ''%>
+        <%= label_tag :puntaje_order, "Ordenar puntaje:" %>
+        <%= select_tag :puntaje_order, options_for_select({ "Mayor a menor" => "desc", "Menor a mayor" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Seleccione aqui', :class => ''%>
 
+        <%#= select_tag :estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a, @estacion_selected), :prompt => 'Estación'%>
+        <%#= select_tag :tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a, @tiempo_selected),  :prompt => 'Tiempo'%>
+        <%#= select_tag :ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a, @formalidad_selected), :prompt => 'Formalidad'%>
+        <%#= label_tag :puntaje_order, "Ordenar puntaje:" %>
+        <%#= select_tag :puntaje_order, options_for_select({ "Mayor a menor" => "desc", "Menor a mayor" => "asc" }, @puntaje_order), :prompt => 'Seleccione aqui'%>
+        <%#= submit_tag "Buscar"%>
+      <% end %>
+    </div>
+  </div>
+  <ul class="atuendos-all">
     <% if @atuendos.blank?  %>
       <span class="text-no-atuendo">No creaste ningún atuendo todavía <i class="fa fa-meh-o"></i> </span>
       <div class="btn-atuendo-add">

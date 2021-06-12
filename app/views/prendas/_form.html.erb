@@ -4,15 +4,11 @@
   <div class="create-form">
     <%= form_for @prenda do |f|%>
 
-      <%= f.label :prenda_tipo_id, 'Categoria de prenda' , {class:'form-items-title'} %><br/>
 
-      <%= f.select :material, PrendaTipo.categoria.keys, {},{class:'form-items',required: true}%>
+      <%= f.select :categoria, PrendaTipo.categoria.keys, {prompt: "Elija la categoria de prenda"},class:'form-items',required: true%>
+      <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo, {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
 
-      <%= f.label :prenda_tipo_id, 'Tipo de prenda' , {class:'form-items-title'}%><br/>
-
-     <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo, {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items'} %>
-
-      <%= f.select :material, Prenda.materials.keys, {}, {class:'form-items' } %>
+      <%= f.select :material, Prenda.materials.keys, {prompt: "Elija el material de la prenda"}, {class:'form-items' } %>
 
       <%= f.label :color_primario,{class:'form-items-title'}  %>
       <%= f.color_field :color_primario%>
@@ -22,9 +18,7 @@
       <%= f.text_area :descripcion, {class:'form-items', placeholder:'Descripción' } %>
       <%= f.label :imagen,{class:'form-items-title' }  %>
       <%= f.file_field :imagen, {class:'btn-item-image'}%><br/>
-
-      <%= f.label :guardarropa_id, {class:'form-items-title' }%>
-      <%= f.collection_select :guardarropa_id, Guardarropa.all, :id, :nombre, {:prompt => "Elija un guardarropas", :selected => params[:guardarropa_id]}, {class:'form-items' } %>
+      <%= f.collection_select :guardarropa_id,  Guardarropa.where(user: current_user), :id, :nombre, {:prompt => "Elija un guardarropas", :selected => params[:guardarropa_id]}, {class:'form-items' } %>
 
       <div class="create-form-submit-buttons">
         <%= f.submit 'Guardar', {class:'btn-item-submit'} %>

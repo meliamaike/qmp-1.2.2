@@ -9,7 +9,7 @@
           <% if prenda.imagen.attached? %>
               <%= link_to image_tag(prenda.imagen), prenda %>
             <%else %>
-              <%= link_to image_tag("public/placeholder.png"), prenda%>
+              <%= link_to image_tag("/placeholder.png"), prenda%>
           <% end %>
           <h3><%= link_to prenda.descripcion, prenda%></h3>
         </li>

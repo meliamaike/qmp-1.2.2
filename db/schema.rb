@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_235827) do
 
   create_table "prendas", force: :cascade do |t|
     t.integer "categoria"
+    t.integer "tipo"
     t.integer "material"
     t.string "color_primario"
     t.string "color_secundario"

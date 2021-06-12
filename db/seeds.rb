@@ -1,4 +1,26 @@
 
+User.create email: "admin@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: true
+User.create email: "ej1@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej2@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej3@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej4@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej5@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej6@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej7@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej8@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej9@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej10@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej11@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej12@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej13@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej14@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej15@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+
+
+
+
+
+
 PrendaTipo.create(categoria: 0, tipo:  0)
 PrendaTipo.create(categoria: 0, tipo:  1)
 PrendaTipo.create(categoria: 1, tipo: 10)
@@ -23,9 +45,13 @@ PrendaTipo.create(categoria: 3, tipo:  9)
 PrendaTipo.create(categoria: 3, tipo: 21)
 PrendaTipo.create(categoria: 3, tipo: 22)
 
-vintage=Guardarropa.create! nombre: "Estilo vintage"
-lluvia=Guardarropa.create! nombre: "Dia de lluvia"
-playa=Guardarropa.create! nombre: "playa"
+admin=Guardarropa.create! nombre: "Admin guardarropas" , user_id: 1
+vintage=Guardarropa.create! nombre: "Estilo vintage",user_id: 2
+lluvia=Guardarropa.create! nombre: "Dia de lluvia",user_id: 3
+playa=Guardarropa.create! nombre: "playa",user_id: 4
+
+
+
 
 remera=Prenda.create! descripcion: "remera para dormir", material: :algodon, color_primario: "#CCA9DD",color_secundario: "#F9EAC3", guardarropa_id: 1, prenda_tipo_id: 1
 pantalon=Prenda.create! descripcion: "pantalon para dormir", material: :lino, color_primario: "#F9EAC3", color_secundario: "#CCA9DD", guardarropa_id: 1, prenda_tipo_id: 1

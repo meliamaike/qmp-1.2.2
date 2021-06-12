@@ -1,9 +1,14 @@
 class AtuendosController < ApplicationController
 
+
+  # before_action :finder_guardarropa, :require_user
+  before_action :finder_guardarropa
   before_action :set_guardarropa
   before_action :set_atuendo, only: [:show, :edit, :update, :destroy]
   def index
-    @atuendos=Atuendo.all
+    @atuendos=Atuendo.where(guardarropa: @guardarropa)
+    @atuendos= @atuendos.filter_by_estacion(params[:estacion_tag].presence).filter_by_ocasion(params[:ocasion_tag].presence).filter_by_tiempo(params[:tiempo_tag].presence).ordered_by_puntaje(params[:puntaje_order].presence)
+    filter_memory
 
   end
 
@@ -20,15 +25,8 @@ class AtuendosController < ApplicationController
       render :edit
     end
 
-
-
-
-    # if @atuendo.update_attributes(atuendo_params)
-    #   redirect_to guardarropa_atuendos_path, notice: t(:updated)
-    # else
-    #   render edit_atuendo_path
-    # end
   end
+
   def generate
 
     @atuendo=Atuendo.new
@@ -90,5 +88,23 @@ class AtuendosController < ApplicationController
     @prendas_piernas = Guardarropa.find(params[:guardarropa_id]).prendas_piernas
     @prendas_pies = Guardarropa.find(params[:guardarropa_id]).prendas_pies
   end
+
+  def finder_guardarropa
+    @guardarropa= Guardarropa.find_by(id: params[:guardarropa_id], user: current_user)
+  end
+
+  # def validar_usuario
+  #   if !(Atuendo.find(params[:id]).user == current_user)
+  #     render :index, status: 403
+  #   end
+  # end
+
+  def filter_memory
+    @estacion_selected = params[:estacion_tag].presence
+    @tiempo_selected = params[:tiempo_tag].presence
+    @formalidad_selected = params[:ocasion_tag].presence
+    @puntaje_order = params[:puntaje_order].presence
+  end
+
 
 end
