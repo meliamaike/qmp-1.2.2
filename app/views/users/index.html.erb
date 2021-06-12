@@ -15,11 +15,9 @@
       <tr>
         <td><%=u.email%></td>
         <td><%= Guardarropa.where(user: u).count %> </td>
-        <%sum=0%>
-        <% Guardarropa.where(user: u).each do |g| %>
-          <%sum= sum + Prenda.where(guardarropa_id: g.id).count %>
-        <% end %>
-        <td><%=sum%></td>
+
+        <td><%= Prenda.where(user_id: u.id).count %></td>
+
         <td><%=u.created_at%></td>
       </tr>
     <% end %>

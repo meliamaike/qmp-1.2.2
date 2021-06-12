@@ -29,4 +29,5 @@ class Atuendo < ApplicationRecord
   has_one :user, through: :guardarropa
 
 
+
 end

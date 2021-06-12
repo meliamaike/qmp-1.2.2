@@ -1,8 +1,8 @@
 
-User.create email: "admin@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: true
-User.create email: "ej1@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
-User.create email: "ej2@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
-User.create email: "ej3@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "admin@gmail.com", password: "11111111", created_at: "2000-01-21 21:00", updated_at: "2021-03-21 21:00:32", admin: true
+User.create email: "ej1@gmail.com", password: "mmmmmmmm", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej2@gmail.com", password: "mmmmmmmm", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
+User.create email: "ej3@gmail.com", password: "mmmmmmmm", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
 User.create email: "ej4@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
 User.create email: "ej5@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
 User.create email: "ej6@gmail.com", password: "asdasdasd", created_at: "2020-06-21 21:00", updated_at: "2020-06-21 21:00:32", admin: false
