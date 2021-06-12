@@ -17,7 +17,9 @@ class PrendasController < ApplicationController
 
   # get /prendas/
   def index
-    @prendas=current_user.prendas
+    # @prendas=current_user.prendas.page params[:page]
+
+    # @prendas=current_user.prendas
 
   end
 

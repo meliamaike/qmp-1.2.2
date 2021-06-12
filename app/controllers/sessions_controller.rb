@@ -22,5 +22,11 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
+  def profile
+    @guardarropas = Guardarropa.where(user: current_user)
+    @atuendos=Atuendo.where(user:current_user)
+    @prendas = Prenda.where(user:current_user)
+  end
+
 
 end

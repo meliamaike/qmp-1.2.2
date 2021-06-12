@@ -14,4 +14,7 @@ Rails.application.routes.draw do
    post '/sessions', to: 'sessions#create'
    get '/logout', to: 'sessions#destroy'
 
+
+  get '/profile', to: 'sessions#profile'
+
 end

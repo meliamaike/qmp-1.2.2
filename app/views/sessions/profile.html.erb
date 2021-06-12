@@ -1,0 +1,89 @@
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+</head>
+
+<div id="login-section">
+  <div id="app-buttons">
+    <div id="prendas-button" class="login-buttons">
+      <%= submit_tag "Prendas" , :class => "btn-login" %>
+    </div>
+    <div id="guardarropas-button" class="login-buttons">
+      <%= submit_tag "Guardarropas" , :class => "btn-login" %>
+    </div>
+    <div id="atuendos-button" class="login-buttons">
+      <%= submit_tag "Atuendos" , :class => "btn-login" %>
+    </div>
+  </div>
+
+  <div id="prendas-show">
+    <%= link_to "Crear prenda", new_prenda_path, class:"guardarropa-new-item-btn" %>
+    <% if (@guardarropas.all? { |guardarropa| guardarropa.prendas.nil? }) %>
+      <span class="text-center">Todavía no agregaste prendas. Recuerda que primero tienes que haber creado un guardarropa <i class="fa fa-meh-o"></i></span>
+    <% else %>
+      <% @guardarropas.each do |g| %>
+        <% if g.prendas.blank? %>
+          <span class="text-center">Todavía no creaste ninguna prenda <i class="fa fa-meh-o"></i></span>
+        <% else %>
+          <% g.prendas.each do |p| %>
+            <li class="prendas-all-from-guardarropa-unit">
+              <%= render 'guardarropas/prenda', prenda: p %>
+            </li>
+          <%end%>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="guardarropas-show">
+    <%= link_to "Crear guardarropa", new_guardarropa_path, class:"guardarropa-new-item-btn" %>
+    <% if @guardarropas.blank? %>
+      <span class="text-center">Todavía no creaste ningun guardarropas <i class="fa fa-meh-o"></i></span>
+    <% else %>
+      <% @guardarropas.each do |g| %>
+        <li class="prendas-all-from-guardarropa-unit">
+          <%= render 'guardarropas/guardarropa', guardarropa: g %>
+        </li>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="atuendos-show">
+    <% if (@guardarropas.all? { |guardarropa| guardarropa.atuendos.nil? }) %>
+      <span class="text-center">Todavía no agregaste atuendos. Recuerda que primero tienes que haber creado un guardarropa con una prenda de cada tipo <i class="fa fa-meh-o"></i></span>
+    <% else %>
+      <% @guardarropas.each do |g| %>
+        <% if g.atuendos.any? %>
+          <% g.atuendos.each do |a| %>
+            <li class="prendas-all-from-guardarropa-unit">
+              <%= render 'atuendos/atuendo', atuendo: a %>
+            </li>
+          <%end%>
+        <%end%>
+      <%end%>
+    <% end %>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#prendas-button").click(function() {
+            $("#prendas-show").show();
+            $("#guardarropas-show").hide();
+            $("#atuendos-show").hide();
+        });
+        $("#guardarropas-button").click(function() {
+            $("#guardarropas-show").show();
+            $("#prendas-show").hide();
+            $("#atuendos-show").hide();
+        });
+        $("#atuendos-button").click(function() {
+            $("#atuendos-show").show();
+            $("#prendas-show").hide();
+            $("#guardarropas-show").hide();
+        });
+    });
+</script>

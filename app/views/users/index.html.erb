@@ -15,12 +15,12 @@
       <tr>
         <td><%=u.email%></td>
         <td><%= Guardarropa.where(user: u).count %> </td>
-
         <td><%= Prenda.where(user_id: u.id).count %></td>
-
         <td><%=u.created_at%></td>
       </tr>
     <% end %>
   </table>
+
+  <%#= paginate @users %>
 </div>
 <%= link_to 'New User', new_user_path %>
