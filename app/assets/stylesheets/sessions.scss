@@ -23,6 +23,49 @@ img {
 }
 
 
+////////////////////////////////
+.app-buttons{
+  display: inline-block;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btn-app{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4e0d3a;
+  padding: 30px 10px;
+  cursor: pointer;
+  background-color:rgb(243,199,214) ;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  width: 150px;
+}
+
+#app-buttons-container{
+  margin-bottom: 5%;
+}
+
+.app-show-btn{
+  display: inline-block;
+  color: #FFFF;
+  background-color: #4e0d3a;
+  padding: 15px 15px ;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.app-show-text{
+  margin-bottom: 10px;
+  display:inline-block;
+  text-align: center;
+  font-size: 15px;
+}
+
 
 #login-section{
   background: white;

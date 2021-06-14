@@ -45,6 +45,40 @@ img {
   color: #e30425;
 }
 
+//////////
+
+.navegation-nav{
+  width: 1000px;
+  margin: 30px auto;
+  background: #fff;
+}
+
+.navegation-nav ul{
+  list-style: none;
+}
+
+.menu > li{
+  position: relative;
+  display: inline-block;
+}
+
+.menu > li > a{
+  display: block;
+  padding: 15px 20px;
+  color: #353535;
+  font-family: 'Open sans';
+  text-decoration: none;
+}
+
+.menu li a:hover{
+  color: #CE7D35;
+  transition: all .3s;
+}
+
+
+
+/////////
+
 .main-nav {
   width: 0;
   height: 100vh;

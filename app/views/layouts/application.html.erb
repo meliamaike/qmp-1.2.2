@@ -55,29 +55,32 @@
       <label class="user-icon">
         <a href="/login"><i class="fa fa-user-circle" aria-hidden="true"></i>
         </a>
-        <ul class="nav-links">
-          <li><a href="/" class="text-dark no-underline">Nosotros</a></li>
-          <% if current_user.blank?  %>
-            <% if !current_page?(login_path) %>
+        <nav class="navegation-nav">
+          <ul class="nav-links">
+            <li>
+              <% if current_user.blank?  %>
+                <% if !current_page?(login_path) %>
+                <li>
+                  <a href="/login" class="text-dark no-underline">Login</a>
+                </li>
+              <% end %>
               <li>
-                <a href="/login" class="text-dark no-underline">Login</a>
+                <a href="/users/new" class="text-dark no-underline">Sign-Up</a>
+              </li>
+            <% else %>
+              <% if current_user.admin?  %>
+                <li><a href="/users" class="text-dark no-underline">Usuarios</a></li>
+              <% end %>
+              <li>
+                <a href="/guardarropas" class="text-dark no-underline">Guardarropas</a>
+              </li>
+              <li>
+                <a href="/logout" class="text-dark no-underline">Logout</a>
               </li>
             <% end %>
-            <li>
-              <a href="/users/new" class="text-dark no-underline">Sign-Up</a>
-            </li>
-          <% else %>
-            <% if current_user.admin?  %>
-              <li><a href="/users" class="text-dark no-underline">Usuarios</a></li>
-            <% end %>
-            <li>
-              <a href="/guardarropas" class="text-dark no-underline">Guardarropas</a>
-            </li>
-            <li>
-              <a href="/logout" class="text-dark no-underline">Logout</a>
-            </li>
-          <% end %>
-        </ul>
+          </ul>
+        </nav>
+
       </label>
 
 

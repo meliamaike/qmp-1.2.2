@@ -57,7 +57,7 @@ class PrendasController < ApplicationController
 
     # nota: prenda_params NO viene con el controller,lo tenés que definir vos
     @prenda=Prenda.create(prenda_params)
-    @prenda.user_id = current_user
+    @prenda.user = current_user
     @guardarropa = Guardarropa.find(prenda_params[:guardarropa_id])
     redirect_to @guardarropa
   end
