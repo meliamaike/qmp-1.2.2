@@ -3,7 +3,7 @@ common: &common
   encoding: unicode
   host: localhost
   pool: 5
-  username: junname
+  username: postgres
   password: admin
 
 test:

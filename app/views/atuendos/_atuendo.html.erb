@@ -36,15 +36,15 @@
 <div class="prendas-all-details-container">
   <h4 class="">Prendas</h4>
     <% if !(atuendo.cabeza.blank?)  %>
-      <%= render 'prenda', prenda: atuendo.cabeza %>
+      <%= render 'atuendos/prenda', prenda: atuendo.cabeza %>
     <%end%>
     <% if !(atuendo.torso.blank?)  %>
-      <%= render 'prenda', prenda: atuendo.torso %>
+      <%= render 'atuendos/prenda', prenda: atuendo.torso %>
     <%end%>
     <% if !(atuendo.piernas.blank?)  %>
-      <%= render 'prenda', prenda: atuendo.piernas %>
+      <%= render 'atuendos/prenda', prenda: atuendo.piernas %>
     <%end%>
     <% if !(atuendo.pies.blank?)  %>
-      <%= render 'prenda', prenda: atuendo.pies %>
+      <%= render 'atuendos/prenda', prenda: atuendo.pies %>
     <%end%>
 </div>
