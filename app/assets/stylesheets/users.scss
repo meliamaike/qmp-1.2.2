@@ -109,6 +109,48 @@ img {
 //////////////
 
 
+//USERS
+
+.users-div{
+  background-color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+
+}
+.users-div h2{
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  color: #4e0d3a;
+  font-size: 6em;
+  text-align:center;
+  text-transform: uppercase;
+}
+.table-titles{
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3c7d6;
+}
+
+tbody tr {
+  background-color: #4e0d3a;
+}
+
+table {
+  color: #4e0d3a;
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+////////
+
+
 @media (min-width:650px) {
   #sign-up-section{
     padding-top: 8%;
@@ -121,6 +163,10 @@ img {
   }
   .back-link a{
     font-size: 17px;
+  }
+
+  table {
+    font-size: 2.5em;
   }
 }
 
@@ -149,6 +195,10 @@ img {
   .sign-up-buttons{
     padding-bottom: 10%;
 
+  }
+
+  table {
+    font-size: 3.5em;
   }
 
 

@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-
-    if session[:user_id]
-      User.find(session[:user_id])
+    user_id=session[:user_id]
+    if user_id
+      User.find(user_id)
     else
       nil
     end
@@ -17,9 +17,12 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    return true if logged_in?
-    render template: 'sessions/new'
-    return false
+    if logged_in?
+      return true
+      render template: 'sessions/new'
+    else
+      return false
+    end
   end
 
 

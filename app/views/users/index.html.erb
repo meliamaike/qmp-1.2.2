@@ -1,11 +1,10 @@
 
-<div class=" margin-container">
-  <div class="row center p-4">
-    <p id="notice"><%= notice %></p>
-    <h1>Usuarios Registrados</h1>
+<div class="users-div">
+  <div class="">
+    <h2>Usuarios Registrados</h2>
   </div>
   <table class="table">
-    <tr>
+    <tr class="table-titles">
       <th scope="col">Email</th>
       <th scope="col">Guardarropas</th>
       <th scope="col">Prendas</th>
@@ -23,4 +22,3 @@
 
   <%#= paginate @users %>
 </div>
-<%= link_to 'New User', new_user_path %>

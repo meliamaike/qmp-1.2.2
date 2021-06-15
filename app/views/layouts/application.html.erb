@@ -52,38 +52,37 @@
     </div>
 
     <div class="navigation-right">
-      <label class="user-icon">
-        <a href="/login"><i class="fa fa-user-circle" aria-hidden="true"></i>
-        </a>
-        <nav class="navegation-nav">
-          <ul class="nav-links">
-            <li>
-              <% if current_user.blank?  %>
-                <% if !current_page?(login_path) %>
-                <li>
+
+      <div class="dropdownMenu">
+        <div class="title dropdownButton">
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </div>
+        <div class="dropdownContent">
+          <ul>
+            <% if current_user.blank?  %>
+              <% if !current_page?(login_path) %>
+                <li class="navi-li">
                   <a href="/login" class="text-dark no-underline">Login</a>
                 </li>
               <% end %>
-              <li>
-                <a href="/users/new" class="text-dark no-underline">Sign-Up</a>
+              <li class="navi-li">
+                <a href="/users/new" class="text-dark no-underline">Registrate</a>
               </li>
             <% else %>
-              <% if current_user.admin?  %>
-                <li><a href="/users" class="text-dark no-underline">Usuarios</a></li>
-              <% end %>
               <li>
                 <a href="/guardarropas" class="text-dark no-underline">Guardarropas</a>
               </li>
+              <% if current_user.admin?  %>
+                <li><a href="/users" class="text-dark no-underline">Usuarios</a>
+                </li>
+              <% end %>
               <li>
                 <a href="/logout" class="text-dark no-underline">Logout</a>
               </li>
             <% end %>
           </ul>
-        </nav>
-
-      </label>
-
-
+        </div>
+      </div>
 
     </div>
 
@@ -135,6 +134,37 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.min.js"></script>
+
+
+  <script>
+      $(document).ready(function() {
+
+          //Botón de acción del acordeón
+          $('.dropdownButton').click(function() {
+
+              //Elimina la clase on de todos los botones
+              $('.dropdownButton').removeClass('on');
+
+              //Plegamos todo el contenido que esta abierto
+              $('.dropdownContent').slideUp('slow');
+
+              //Si el siguiente slide no esta abierto lo abrimos
+              if($(this).next().is(':hidden') == true) {
+
+                  //Añade la clase on en el botón
+                  $(this).addClass('on');
+
+                  //Abre el slide
+                  $(this).next().slideDown('slow');
+              }
+
+          });
+
+          // Cerramos todo el contenido al cargar la página
+          $('.dropdownContent').hide();
+
+      });
+  </script>
 
   <script>
 

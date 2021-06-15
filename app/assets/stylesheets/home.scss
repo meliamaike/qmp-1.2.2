@@ -26,7 +26,7 @@ img {
 .main-header {
   display: flex;
   background-color: #4e0d3a;
-  width: 30%;
+
 }
 
 .logo-2-img{
@@ -35,47 +35,73 @@ img {
 
 }
 
-.navigation-right{
-  font-size: 3em;
-  padding: 0px 5px 5px 21%;
+.navigation-left{
+  //width: 30%;
+  flex: 1 1 0%;
+  justify-content: flex-start;
+  display: flex;
 
+}
+.navigation-right{
+  width: 100%;
+  flex: -1 0 0%;
+  justify-content: flex-end;
+  display: flex;
 }
 
 .navigation-right a{
   color: #e30425;
+
 }
 
 //////////
-
-.navegation-nav{
-  width: 1000px;
-  margin: 30px auto;
-  background: #fff;
+.dropdownMenu{
+  width: 50%;
+  z-index: 10000;
+}
+.title{
+  padding: 7px 20px;
+  //background-color: #994b4b;
+  color: #e30425;
+  margin-bottom: 0;
+  text-align: right;
+  font-size:2.6em ;
 }
 
-.navegation-nav ul{
-  list-style: none;
+.dropdownButton:hover{
+  cursor: pointer;
+}
+.dropdownButton > p .fa{
+  float: right;
+}
+.dropdownContent ul{
+  margin: 0;
+  padding: 0 10px;
 }
 
-.menu > li{
-  position: relative;
-  display: inline-block;
-}
-
-.menu > li > a{
+.dropdownContent{
+  padding: 15px 14px;
+  margin-right: 10px;
+  background-color: #4e0d3a;
+  margin-top: -1px;
+  font-size: 1.4em;
+  text-align: right;
+  width: 46%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   display: block;
-  padding: 15px 20px;
-  color: #353535;
-  font-family: 'Open sans';
+  position: absolute;
+
+}
+.dropdownContent ul li{
+  list-style: none;
+  padding: 8px 0;
+}
+.dropdownContent ul li a{
   text-decoration: none;
+  color: #FFFF;
 }
-
-.menu li a:hover{
-  color: #CE7D35;
-  transition: all .3s;
-}
-
-
 
 /////////
 
@@ -126,10 +152,7 @@ img {
 .toggle-nav {
   font-size: 3.3em;
   color: #e30425;
-  flex: 1 1 0%;
-  justify-content: flex-end;
-  display: flex;
-  padding: 0px 255px 10px 20px;
+  padding: 0px 0px 10px 20px;
 }
 
 .weatherWidget {
@@ -550,13 +573,42 @@ img {
 
   .navigation-right{
     font-size: 4.3em;
-    //margin: 3%;
     padding: 0px 5px 5px 31%;
 
   }
+
+  ///////
+
+  .dropdownMenu{
+    width: 102%;
+    z-index: 10000;
+  }
+  .title{
+    color: #e30425;
+    text-align: right;
+    font-size:1.3em;
+    padding-left: 10px;
+    margin: 10px 10px 10px 10px;
+  }
+
+
+  .dropdownContent ul{
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .dropdownContent{
+    font-size: 0.5em;
+    width: 25%;
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+
+  //////
   .toggle-nav {
     font-size: 4.3em;
-    padding: 0px 550px 25px 35px;
+    padding: 0px 383px 25px 35px;
   }
   .banner {
     display:block; /*para sacar el display none, puedo poder cualquier otro valor. pongo block porque quiero que se comporte como un bloque*/
@@ -700,21 +752,51 @@ img {
   }
   .navigation-right{
     font-size: 4em;
-    padding: 30px 33px 0px 85%;
+    padding: 30px 33px 0px 0;
 
   }
+
+
+
+  .dropdownMenu{
+    width: 20%;
+    z-index: 10000;
+  }
+  .title{
+    color: #e30425;
+    text-align: right;
+    font-size:1.3em;
+    padding-left: 10px;
+    margin: 10px 10px 10px 10px;
+
+  }
+
+  .dropdownContent ul{
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .dropdownContent{
+    font-size: 0.5em;
+    width: 16%;
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+
+
   .toggle-nav {
 
     padding: 35px 75px 5px 20px;
   }
 
   .main-nav {
-    width: 500%;
+    width: 500px;
     height: auto; /*como no sabemos cuanto quiero que tenga le pongo height.auto*/
-    position: static; /*limpio y le digo que la position que tenia antes, ya no la tiene porque sino la hereda*/
+    position: static;
     left: 0;
     top: 0;
-    background-color: transparent; /*siempre que quiera eliminar un color debo poner tranparent*/
+    background-color: transparent;
     margin: auto;
 
   }
