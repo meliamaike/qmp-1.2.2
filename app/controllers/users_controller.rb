@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   def index
     if current_user && current_user.admin?
 
-      @users = User.all
+      #@users = User.all
       #
       #
       #
-      # @users =User.page params[:page]
+      @users =User.page params[:page]
     else
       flash[:error]="Usted no tiene permisos"
       redirect_to root_path

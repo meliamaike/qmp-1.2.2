@@ -22,11 +22,11 @@
   <div id="prendas-show">
     <%= link_to "Crear prenda", new_prenda_path, class:"app-show-btn" %>
     <% if (@guardarropas.all? { |guardarropa| guardarropa.prendas.nil? }) %>
-      <span class="app-show-text">Todavía no agregaste prendas. Recuerda que primero tienes que haber creado un guardarropa <i class="fa fa-meh-o"></i></span>
+      <span id="app-text-show">Todavía no agregaste prendas. Recuerda que primero tienes que haber creado un guardarropa </span>
     <% else %>
       <% @guardarropas.each do |g| %>
         <% if g.prendas.blank? %>
-          <span class="app-show-text">Todavía no creaste ninguna prenda <i class="fa fa-meh-o"></i></span>
+          <span id="app-text-show">Todavía no creaste ninguna prenda </span>
         <% else %>
           <% g.prendas.each do |p| %>
             <li class="prendas-all-from-guardarropa-unit">
@@ -41,7 +41,7 @@
   <div id="guardarropas-show">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"app-show-btn" %>
     <% if @guardarropas.blank? %>
-      <span class="app-show-text">Todavía no creaste ningun guardarropas <i class="fa fa-meh-o"></i></span>
+      <span id="app-text-show">Todavía no creaste ningun guardarropas </span>
     <% else %>
       <% @guardarropas.each do |g| %>
         <li class="prendas-all-from-guardarropa-unit">
@@ -53,9 +53,9 @@
 
   <div id="atuendos-show">
     <% if (@guardarropas.all? { |guardarropa| guardarropa.atuendos.nil? }) %>
-      <span class="app-show-text">Todavía no agregaste atuendos. Recuerda que primero tienes que haber creado un guardarropa con una prenda de cada tipo <i class="fa fa-meh-o"></i></span>
+      <span id="app-text-show">Todavía no agregaste atuendos. Recuerda que primero tienes que haber creado un guardarropa con una prenda de cada tipo </span>
     <% else %>
-      <span class="app-show-text">Para crear atuendos tendra que ir a la lista de guardarropas y elegir alli en cual guardarropa crear un nuevo atuendo </span>
+      <span id="app-text-show">Para crear atuendos tendra que ir a la lista de guardarropas y elegir alli en cual guardarropa crear un nuevo atuendo </span>
       <%= link_to "Ver Guardarropas", guardarropas_path, class:"app-show-btn" %>
       <% @guardarropas.each do |g| %>
         <% if g.atuendos.any? %>
