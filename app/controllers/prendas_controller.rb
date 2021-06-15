@@ -20,7 +20,8 @@ class PrendasController < ApplicationController
     @prendas=current_user.prendas.page params[:page]
 
     # @prendas=current_user.prendas
-
+    # @prendas = Prenda.page params[:page]
+    # @prendas = @prendas.where(user: current_user)
   end
 
   # 1. Cuando accedemos a /prendas/1, rails sabe

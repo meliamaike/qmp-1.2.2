@@ -4,7 +4,8 @@ class GuardarropasController < ApplicationController
   before_action :validar_usuario, only: [:show, :edit, :update, :destroy]
 
   def index
-    @guardarropas = Guardarropa.where(user: current_user)
+    @guardarropas = Guardarropa.page params[:page]
+    @guardarropas = @guardarropas.where(user: current_user)
   end
 
   def show
