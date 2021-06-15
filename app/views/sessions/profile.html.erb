@@ -25,14 +25,10 @@
       <span id="app-text-show">Todavía no agregaste prendas. Recuerda que primero tienes que haber creado un guardarropa </span>
     <% else %>
       <% @guardarropas.each do |g| %>
-        <% if g.prendas.blank? %>
-          <span id="app-text-show">Todavía no creaste ninguna prenda </span>
-        <% else %>
           <% g.prendas.each do |p| %>
             <li class="prendas-all-from-guardarropa-unit">
               <%= render 'guardarropas/prenda', prenda: p %>
             </li>
-          <%end%>
         <% end %>
       <% end %>
     <% end %>
@@ -66,8 +62,9 @@
           <%end%>
         <%end%>
       <%end%>
-    <% end %>
+    <%end %>
   </div>
+
 </div>
 
 <script>

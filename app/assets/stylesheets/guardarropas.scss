@@ -22,32 +22,6 @@ img {
   width: 100%;
 }
 
-//logo-2-img{
-//  width: 100%;
-//  padding: 10px 5px 5px 19%;
-//
-//}
-
-//.navigation-right{
-//  font-size: 3em;
-//  //margin: 3%;
-//  padding: 13px 5px 5px 21%;
-//
-//}
-
-//.navigation-right a{
-//  color: #e30425;
-//
-//}
-//
-//.toggle-nav {
-//  font-size: 3.3em;
-//  color: #e30425;
-//  flex: 1 1 0%;
-//  justify-content: flex-end;
-//  display: flex;
-//  padding: 15px 10px 5px 20px;
-//}
 
 .guardarropas-show-container{
   background-color: rgb(243,199,214);
@@ -189,7 +163,6 @@ img {
 
   display: inline-block;
   color: #4e0d3a;
-  //background-color: #4e0d3a;
   padding: 15px 0px ;
   font-size: 15px;
   text-transform: uppercase;
@@ -199,8 +172,28 @@ img {
   font-weight: bold;
 }
 
-.weatherWidget {
-  display: none;
+//.weatherWidget {
+//  display: none;
+//
+//}
+
+.prenda-list{
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.prenda-list-image{
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+.prenda-list-actions-icons{
+  text-align: center;
+}
+
+.prenda-list-actions-icons a{
+  color: #4e0d3a;
 
 }
 @media (min-width:650px) {
@@ -225,6 +218,14 @@ img {
 
   .btn-atuendo-random{
     margin: 5% 43%;
+  }
+
+  .prenda-list-image {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 
 
@@ -261,7 +262,6 @@ img {
   }
 
   .show-btns-container{
-    //margin: 2% 5%;
     justify-content: center;
 
   }
@@ -294,9 +294,12 @@ img {
 
     margin: 30px 36%;
   }
+
   //.weatherWidget {
   //  display: block;
   //
   //}
+
+
 
 }

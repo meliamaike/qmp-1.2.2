@@ -92,12 +92,6 @@ class AtuendosController < ApplicationController
     @guardarropa= Guardarropa.find_by(id: params[:guardarropa_id], user: current_user)
   end
 
-  # def validar_usuario
-  #   if !(Atuendo.find(params[:id]).user == current_user)
-  #     render :index, status: 403
-  #   end
-  # end
-
   def filter_memory
     @estacion_selected = params[:estacion_tag].presence
     @tiempo_selected = params[:tiempo_tag].presence

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   def new
   #Cuando el controller esta vacio, renderiza la vista
     # redirect_to action: :index
@@ -26,7 +27,10 @@ class SessionsController < ApplicationController
     @guardarropas = Guardarropa.where(user: current_user)
     @atuendos=Atuendo.where(user:current_user)
     @prendas = Prenda.where(user:current_user)
+
+
   end
+
 
 
 end

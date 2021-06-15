@@ -1,17 +1,24 @@
 <ul class="prenda-list">
-  <li>
-    <%=prenda.descripcion %>
+  <li class="prenda-list-title">
+    <%= prenda.descripcion %>
+    <div class="prenda-list-actions-icons">
+      <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
+      <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Estás seguro que queres borrar la prenda?' }%>
+    </div>
   </li>
-  <li>
-    <%#=prenda.material %>
-  </li>
+
 </ul>
 
-<div class="prenda-actions-icons">
-  <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
-  <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Estás seguro que queres borrar la prenda?' }%>
+  <div class="prenda-list-image">
+    <% if prenda.imagen.attached? %>
 
-</div>
+      <%= image_tag(prenda.imagen) %>
+    <%else %>
+      <%=image_tag("/placeholder.png")%>
+    <%end %>
+  </div>
+
+
 
 
 

@@ -15,8 +15,9 @@ class GuardarropasController < ApplicationController
   def create
     @guardarropa=Guardarropa.create(guardarropa_params) # nota: prenda_params NO viene con el controller,
     @guardarropa.user = current_user
+
     if @guardarropa.save
-      flash[:success]="El guardarropa se guardó correctamente!"
+      flash[:success]="El guardarropa se guardó correctamente."
       redirect_to @guardarropa
     else
       flash[:error]="El guardarropa no se pudo guardar"
