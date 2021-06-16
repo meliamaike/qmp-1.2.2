@@ -6,9 +6,7 @@ class UsersController < ApplicationController
     if current_user && current_user.admin?
 
       #@users = User.all
-      #
-      #
-      #
+
       @users =User.page params[:page]
     else
       flash[:error]="Usted no tiene permisos"
@@ -32,11 +30,12 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    @user.admin=false
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
 
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        format.html { redirect_to "/profile"}
         # format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

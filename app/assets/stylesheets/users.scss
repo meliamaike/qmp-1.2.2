@@ -102,8 +102,28 @@ img {
   padding: 0 14px;
   line-height: 38px;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid #DDD;
+  border: 1px solid #4e0d3a;
+  background-color: #f3c7d6;
+  border-radius: 25px;
+  //font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  color: #4e0d3a;
+  font-size: 1.3em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2px;
+}
+
+.pagination span.current{
+  background-color: #4e0d3a;
+  color: #f3c7d6;
+
+}
+
+ .pagination a:hover{
+  background-color: #DADADA;
+  color: #4e0d3a;
 }
 
 //////////////
@@ -114,6 +134,7 @@ img {
 .users-div{
   background-color: white;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 100vh;
 
 }
 .users-div h2{
@@ -121,7 +142,7 @@ img {
   justify-content: center;
   align-items: center;
   color: #4e0d3a;
-  font-size: 6em;
+  font-size: 4em;
   text-align:center;
   text-transform: uppercase;
 }
@@ -149,6 +170,18 @@ table {
   text-align: center;
 }
 ////////
+
+.pagination-div{
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  font-size: 1.7em;
+
+}
+
+.pagination span a{
+padding-right: 17px;
+}
 
 
 @media (min-width:650px) {

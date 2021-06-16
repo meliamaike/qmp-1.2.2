@@ -19,7 +19,7 @@ class GuardarropasController < ApplicationController
 
     if @guardarropa.save
       flash[:success]="El guardarropa se guardó correctamente."
-      redirect_to @guardarropa
+      redirect_to '/profile'
     else
       flash[:error]="El guardarropa no se pudo guardar"
       render :new
@@ -40,13 +40,13 @@ class GuardarropasController < ApplicationController
   def update
     @guardarropa = Guardarropa.find(params[:id])
     @guardarropa.update! guardarropa_params
-    redirect_to @guardarropa
+    redirect_to '/profile'
   end
 
   def destroy
     @guardarropa = Guardarropa.find(params[:id])
     Guardarropa.destroy(params[:id])
-    redirect_to action: :index
+    redirect_to '/profile'
 
   end
 

@@ -8,8 +8,6 @@
         <div><a type="button" class="btn-random" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a></div>
         <%= form_for @atuendo, :url => { :action => "create" } do |f| %>
 
-          <%#= f.hidden_field :from_generate, :value => "prueba_hidden_field" %>
-
           <div>
             <%= f.label :nombre, class: 'atuendos-form-title' %>
             <%= f.text_field :nombre, class: 'atuendos-form-items' %>

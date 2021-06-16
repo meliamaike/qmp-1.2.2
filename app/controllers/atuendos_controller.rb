@@ -53,10 +53,11 @@ class AtuendosController < ApplicationController
   def create
 
     @atuendo=Atuendo.new(atuendos_params)
+    @atuendo.user=current_user
 
     if (@guardarropa.atuendos << @atuendo)
 
-      redirect_to action: :index
+      redirect_to '/profile'
     end
 
   end

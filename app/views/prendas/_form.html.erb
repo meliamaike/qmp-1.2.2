@@ -5,7 +5,7 @@
     <%= form_for @prenda do |f|%>
 
 
-      <%= f.select :categoria, PrendaTipo.categoria.keys, {prompt: "Elija la categoria de prenda"},class:'form-items',required: true%>
+      <%#= f.select :categoria, PrendaTipo.categoria.keys, {prompt: "Elija la categoria de prenda"},class:'form-items',required: true%>
       <%= f.collection_select :prenda_tipo_id, PrendaTipo.all, :id, :tipo, {:prompt => "Elija el tipo de Prenda", :selected => params[:prenda_tipo_id]} , { class:'form-items',required: true} %>
 
       <%= f.select :material, Prenda.materials.keys, {prompt: "Elija el material de la prenda"}, {class:'form-items',required: true} %>

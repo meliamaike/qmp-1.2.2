@@ -59,8 +59,9 @@ class PrendasController < ApplicationController
     # nota: prenda_params NO viene con el controller,lo tenés que definir vos
     @prenda=Prenda.create(prenda_params)
     @prenda.user = current_user
+    @prenda.save!
     @guardarropa = Guardarropa.find(prenda_params[:guardarropa_id])
-    redirect_to @guardarropa
+    redirect_to '/profile'
   end
 
   # get /prendas/new
@@ -72,6 +73,7 @@ class PrendasController < ApplicationController
   # put /prendas/:id
   def update
     @prenda.update(prenda_params)
+    @prenda.save!
     redirect_to @prenda
   end
 
