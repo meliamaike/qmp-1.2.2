@@ -61,9 +61,12 @@
                 <%= f.label :descripcion, class: 'atuendos-form-title' %> <%= f.text_area(:descripcion, {:class => 'atuendos-form-items'}) %>
               </div>
 
+              <%= f.number_field :user_id, value:current_user.id, type: :hidden %>
+
+
             </div>
             <p>
-              <%= f.submit :class => 'btn-item-submit', :value => 'Guardar'%>
+              <%= f.submit :class => 'btn-item-submit', :value => 'Crear'%>
 
             </p>
           </div>

@@ -121,8 +121,10 @@
               <div>
                 <%= f.text_area(:descripcion,{:class => 'form-items', required:true,placeholder:'Descripción'}) %>
               </div>
-
             </div>
+
+            <%= f.number_field :user_id, value:current_user.id, type: :hidden %>
+
             <div>
               <p>
                 <%= f.submit "Crear", :class=>'btn-item-submit' %>

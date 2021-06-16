@@ -2,9 +2,8 @@
   <div class="btn-go-back-guardarropa" ><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Volver a Guardarropa</a></div>
   <h2 class="atuendos-title">Atuendos</h2>
   <div class="atuendos-filter">
-    <div class="">
+    <div>
       <%= form_tag guardarropa_atuendos_path, method: :get do %>
-        <%= label_tag :estacion_tag, "Filtrar por:" %>
         <%= select_tag :estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Estación', :class => 'atuendos-filter-item'%>
         <%= select_tag :tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Tiempo',  :class => 'atuendos-filter-item'%>
         <%= select_tag :ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formalidad',  :class => 'atuendos-filter-item'%>

@@ -20,6 +20,7 @@
       <%= f.file_field :imagen, {class:'btn-item-image'}%><br/>
       <%= f.collection_select :guardarropa_id,  Guardarropa.where(user: current_user), :id, :nombre, {:prompt => "Elija un guardarropas", :selected => params[:guardarropa_id]}, {class:'form-items',required: true } %>
 
+      <%= f.number_field :user_id, value:current_user.id, type: :hidden %>
       <div class="create-form-submit-buttons">
         <%= f.submit 'Guardar', {class:'btn-item-submit'} %>
         <%= link_to "<button>Cancelar</button>".html_safe, prendas_path(@prenda) , class: 'btn-item-cancel', required: true%>

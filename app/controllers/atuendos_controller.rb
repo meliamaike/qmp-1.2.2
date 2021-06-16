@@ -55,6 +55,7 @@ class AtuendosController < ApplicationController
     @atuendo=Atuendo.new(atuendos_params)
     @atuendo.user=current_user
 
+
     if (@guardarropa.atuendos << @atuendo)
 
       redirect_to '/profile'
@@ -71,7 +72,7 @@ class AtuendosController < ApplicationController
   private
 
   def atuendos_params
-    params.require(:atuendo).permit( :torso_id, :cabeza_id, :piernas_id, :pies_id, :puntaje, :estacion_tag, :tiempo_tag, :ocasion_tag, :descripcion, :nombre )
+    params.require(:atuendo).permit( :torso_id, :cabeza_id, :piernas_id, :pies_id, :puntaje, :estacion_tag, :tiempo_tag, :ocasion_tag, :descripcion, :nombre , :user_id)
   end
 
   def set_atuendo

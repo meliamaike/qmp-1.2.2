@@ -17,7 +17,10 @@ class PrendasController < ApplicationController
 
   # get /prendas/
   def index
+
     @prendas=current_user.prendas.page params[:page]
+
+
 
     # @prendas=current_user.prendas
     # @prendas = Prenda.page params[:page]
@@ -101,7 +104,7 @@ class PrendasController < ApplicationController
     # que nos provee rails para manejar de forma segura los campos de un
     # formulario. El require va a llevar el nombre de la clase que queremos manipular
     # y el permit, los campos particulares que nos interesa admitir para editar/crear.
-    params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id)
+    params.require(:prenda).permit(:material,:color_primario,:color_secundario,:descripcion, :imagen, :guardarropa_id, :prenda_tipo_id, :user_id)
   end
 
   def validar_user
