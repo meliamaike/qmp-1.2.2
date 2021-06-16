@@ -183,6 +183,14 @@ table {
 padding-right: 17px;
 }
 
+#error_explanation{
+  color: #e30425;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 
 @media (min-width:650px) {
   #sign-up-section{

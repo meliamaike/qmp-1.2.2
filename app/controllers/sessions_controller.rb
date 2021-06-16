@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/profile'
     else
+      flash.now[:alert] = "Tu contraseña o email no son correctos"
       render :new
     end
   end

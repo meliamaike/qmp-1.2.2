@@ -49,3 +49,16 @@ en:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: El campo no puede estar vacío
+            email:
+              blank: El campo no puede estar vacío
+              invalid: Inválido
+            password:
+              blank: El campo no puede estar vacío
+              too_short: Muy corto (mínimo 8 carácteres y máximo de 16)
