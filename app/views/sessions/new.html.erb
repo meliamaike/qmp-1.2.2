@@ -11,7 +11,7 @@
          <%= password_field_tag :password , nil , class: 'login-items', :placeholder => 'Contraseña' %>
 
         <div class="forgot-password">
-          <a href="">¿Olvidaste tu contraseña?</a>
+          <%=link_to "¿Olvidaste tu contraseña?", password_reset_path %>
         </div>
         <div class="login-buttons">
           <%= submit_tag "Login" , :class => "btn-login" %>

@@ -23,7 +23,7 @@
       <%= f.number_field :user_id, value:current_user.id, type: :hidden %>
       <div class="create-form-submit-buttons">
         <%= f.submit 'Guardar', {class:'btn-item-submit'} %>
-        <%= link_to "<button>Cancelar</button>".html_safe, prendas_path(@prenda) , class: 'btn-item-cancel', required: true%>
+        <%= link_to "<button>Cancelar</button>".html_safe, "/profile" , class: 'btn-item-cancel', required: true%>
       </div>
 
     <% end %>

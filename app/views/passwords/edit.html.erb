@@ -1,0 +1,32 @@
+<div id="sign-up-section">
+  <h2 class="sign-up-title">Restablecer contraseña</h2>
+  <%= form_with(model: current_user, url:edit_password_path) do |form| %>
+    <%# if current_user.errors.any? %>
+<!--      <div id="error_explanation">-->
+<!--        <h2>No se puede guardar este usuario:</h2>-->
+
+<!--        <ul>-->
+          <%# current_user.errors.full_messages.each do |message| %>
+<!--            <li><%#= message %></li>-->
+          <%# end %>
+<!--        </ul>-->
+<!--      </div>-->
+    <%# end %>
+
+    <div class="field">
+      <%= form.password_field :password ,:placeholder => 'Nueva contraseña',:class=>'sign-up-items'%>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password_confirmation, :placeholder => 'Volvé a escribir la nueva contraseña',:class=>'sign-up-items'%>
+    </div>
+
+    <div class="sign-up-buttons">
+      <%= form.submit 'Cambiar Contraseña', {class: 'btn-sign-up'}%>
+    </div>
+    <%end %>
+  <div class="back-link">
+    <%= link_to 'Volver atrás', users_path %>
+  </div>
+</div>
+

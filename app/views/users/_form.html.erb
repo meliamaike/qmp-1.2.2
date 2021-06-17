@@ -2,7 +2,6 @@
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-<!--      <%#= pluralize(user.errors.count, "errores") %> ->-->
       <h2>No se puede guardar este usuario:</h2>
 
       <ul>

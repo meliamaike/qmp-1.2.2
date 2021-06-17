@@ -1,0 +1,12 @@
+<div>
+  <h2>Olvido de contraseña</h2>
+<%=form_with url: password_reset_path do |form| %>
+  <div>
+    <%=form.label :email%>
+    <%= form.text_field :email, class: "", placeholder: "ejemplo@gmail.com"%>
+  </div>
+    <div>
+      <%=form.submit "Enviar", class: ""%>
+    </div>
+<%end %>
+</div>

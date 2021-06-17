@@ -71,6 +71,7 @@ class PrendasController < ApplicationController
   def new
     @prenda = Prenda.new
     @prenda_prenda_tipo_id=@prenda.prenda_tipo_id
+    # redirect_to '/profile'
   end
 
   # put /prendas/:id
@@ -89,7 +90,7 @@ class PrendasController < ApplicationController
 
   def destroy
     @prenda.destroy!
-    redirect_to action: :index
+    redirect_to '/profile'
 
   end
 

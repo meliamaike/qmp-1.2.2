@@ -9,10 +9,12 @@
     Prenda.new (solamente instancia, no inserta)
 
 -->
-<%if @guardarropa%>
+<%if @guardarropa %>
   <%= render 'form', guardarropa: @guardarropa, prenda: @prenda, text:"Crear" %>
+  <%#=redirect_to"/profile" %>
 <%else%>
   <%= render 'form', guardarropa: nil, prenda: @prenda, text:"Crear" %>
+  <%#=redirect_to :back %>
 <%end%>
 
 

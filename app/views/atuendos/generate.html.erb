@@ -34,10 +34,15 @@
             <div>
               <%= f.label :puntaje, class: 'atuendos-form-title' %><br />
               <fieldset>
+                <%= f.radio_button :puntaje, 10 , {id: "star10"}%> <%= label_tag(:star10, "10 ⭐️") %>
+                <%= f.radio_button :puntaje, 9 , {id: "star9"}%> <%= label_tag(:star9, "9 ⭐️") %>
+                <%= f.radio_button :puntaje, 8 , {id: "star8"}%> <%= label_tag(:star8, "8 ⭐️") %>
+                <%= f.radio_button :puntaje, 7 , {id: "star7"}%> <%= label_tag(:star7, "7 ⭐️") %>
+                <%= f.radio_button :puntaje, 6 , {id: "star6"}%> <%= label_tag(:star6, "6 ⭐️") %>
                 <%= f.radio_button :puntaje, 5 , {id: "star5"}%> <%= label_tag(:star5, "5 ⭐️") %>
-                <%=f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
+                <%= f.radio_button :puntaje, 4, {id: "star4"} %> <%= label_tag(:star4, "4 ⭐") %>
                 <%= f.radio_button :puntaje, 3, {id: "star3"} %><%= label_tag(:star3, "3 ⭐") %>
-                <%=f.radio_button :puntaje, 2, {id: "star2"}%> <%= label_tag(:star2, "2 ⭐") %>
+                <%= f.radio_button :puntaje, 2, {id: "star2"}%> <%= label_tag(:star2, "2 ⭐") %>
                 <%= f.radio_button :puntaje, 1, {id: "star1"} %><%= label_tag(:star1, "1 ⭐") %>
               </fieldset>
             </div>

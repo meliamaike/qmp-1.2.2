@@ -1,0 +1,15 @@
+<div>
+  <h2>Actualizar contraseña</h2>
+  <%=form_with url: password_reset_edit_path do |form| %>
+    <div class="field">
+      <%= form.password_field :password ,:placeholder => 'Contraseña',:class=>'sign-up-items'%>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password_confirmation, :placeholder => 'Volvé a escribir la contraseña',:class=>'sign-up-items'%>
+    </div>
+    <div>
+      <%=form.submit "Enviar", class: ""%>
+    </div>
+  <%end %>
+</div>

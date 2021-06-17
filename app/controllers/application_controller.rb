@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
       render template: 'sessions/new'
     else
       return false
+      redirect_to login_path, alert: "Tenes que estar logueado para realizar esta accion" if current_user.nil?
     end
   end
 
