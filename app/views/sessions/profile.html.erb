@@ -7,6 +7,17 @@
 </head>
 
 <div id="login-section">
+  <div id="tutorial" hidden>
+    <p id="app-text-show"> Bienvenido a Shrine! Esta es la pagina principal en donde podra manejar sus prendas, guardarropas y atuendos. </p>
+    <p id="app-text-show"> Lo primero que deberá hacer es crear un guardarropa. Este sera fundamental para poder almacenar distintos tipos de prendas dentro y luego poder armar atuendos con ellas. Haga click en el boton de crear guardarropa que aparece en pantalla para comenzar. </p>
+  </div>
+
+  <div id="tutorial-2" hidden>
+    <p id="app-text-show"> Ahora mismo tiene un guardarropa creado pero todavia no tiene ninguna prenda ni atuendo. Para crear un atuendo va a tener que haber creado una prenda de cada tipo primero asi que dejemos eso para despues </p>
+    <p id="app-text-show"> Haga click en el boton de Prendas </p>
+    <p id="app-text-show"> Por ahora solo se mostrara un boton de Crear Prenda pero a medida que vaya agregando mas prendas se irán mostrando debajo de ese boton. Empezemos agregando nuestra primera prenda. Para ello haga click en Crear Prenda </p>
+  </div>
+
   <div id="app-buttons-container">
     <div id="prendas-button" class="app-buttons">
       <%= submit_tag "Prendas" , :class => "btn-app" %>
@@ -21,12 +32,10 @@
 
   <div id="prendas-show">
     <%= link_to "Crear prenda", new_prenda_path, class:"app-show-btn" %>
-    <% if (@guardarropas.all? { |guardarropa| guardarropa.prendas.nil? }) %>
-      <span id="app-text-show">Todavía no agregaste prendas. Recuerda que primero tienes que haber creado un guardarropa </span>
-    <% else %>
+    <% if !(@guardarropas.all? { |guardarropa| guardarropa.prendas.nil? }) %>
       <% @guardarropas.each do |g| %>
           <% g.prendas.each do |p| %>
-            <li class="prendas-all-from-guardarropa-unit">
+            <li class="prendas-all-from-guardarropa-unit" id="prendas-list">
               <%= render 'guardarropas/prenda', prenda: p %>
             </li>
         <% end %>
@@ -36,11 +45,9 @@
 
   <div id="guardarropas-show">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"app-show-btn" %>
-    <% if @guardarropas.blank? %>
-      <span id="app-text-show">Todavía no creaste ningun guardarropas </span>
-    <% else %>
+    <% if !(@guardarropas.blank?) %>
       <% @guardarropas.each do |g| %>
-        <li class="prendas-all-from-guardarropa-unit">
+        <li class="prendas-all-from-guardarropa-unit" id="guardarropas-list">
           <%= render 'guardarropas/guardarropa', guardarropa: g %>
         </li>
       <% end %>
@@ -48,21 +55,17 @@
   </div>
 
   <div id="atuendos-show">
-    <% if (@guardarropas.all? { |guardarropa| guardarropa.atuendos.nil? }) %>
-      <span id="app-text-show">Todavía no agregaste ningún atuendo. Recorda que primero tenes que haber creado un guardarropa con una prenda de cada tipo. </span>
-    <% else %>
-      <span id="app-text-show">Para crear atuendos tenes que ir a la lista de guardarropas y elegir en cual crear un nuevo atuendo </span>
-      <%= link_to "Ver Guardarropas", guardarropas_path, class:"app-show-btn" %>
-      <% @guardarropas.each do |g| %>
-        <% if g.atuendos.any? %>
-          <% g.atuendos.each do |a| %>
-            <li class="prendas-all-from-guardarropa-unit">
-              <%= render 'atuendos/atuendo', atuendo: a %>
-            </li>
-          <%end%>
+    <span id="app-text-show">Para crear atuendos tenes que ir a la lista de guardarropas y elegir en cual crear un nuevo atuendo. Pero recuerda que no podras hacerlo si todavia no tienes una prenda de cada tipo. </span>
+    <%= link_to "Ver Guardarropas", guardarropas_path, class:"app-show-btn-atuendos" %>
+    <% @guardarropas.each do |g| %>
+      <% if g.atuendos.any? %>
+        <% g.atuendos.each do |a| %>
+          <li class="prendas-all-from-guardarropa-unit" id="atuendos-list">
+            <%= render 'atuendos/atuendo', atuendo: a %>
+          </li>
         <%end%>
       <%end%>
-    <%end %>
+    <%end%>
   </div>
 
 </div>
@@ -85,4 +88,15 @@
             $("#guardarropas-show").hide();
         });
     });
+    $ListaGuardarropas = $('#guardarropas-list')
+    $ListaPrendas = $('#prendas-list')
+    $ListaAtuendos = $('#atuendos-list')
+    if ( $ListaGuardarropas.children().length == 0 ) {
+      $("#prendas-button").hide();
+      $("#atuendos-button").hide();
+      $("#tutorial").show();
+    }
+    if ( $ListaPrendas.children().length == 0 && $ListaGuardarropas.children().length == 2) {
+      $("#tutorial-2").show();
+    }
 </script>

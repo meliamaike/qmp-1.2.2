@@ -41,7 +41,7 @@ img {
 
 #app-buttons-container{
   display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -50,22 +50,25 @@ img {
     text-transform: uppercase;
 }
 
-.app-show-btn{
-  text-justify: auto;
-  display: inline-block;
+.app-show-btn, .app-show-btn-atuendos{
+  margin: auto;
+  display: flex;
   color: #FFFF;
   background-color: #4e0d3a;
-  padding: 20px 15px ;
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  height: 77px;
-  width: 177px;
-  margin-top: 30px;
-  margin-left: 27%;
+  width: 150px;
+  box-sizing: content-box;
+  font-size: 18px;
+  padding: 15px 20px;
 }
+.app-show-btn-atuendos{
+  margin-top: 3%;
+}
+
 
 #app-text-show{
   display: flex;
@@ -191,10 +194,6 @@ img {
     margin-bottom: 2%;
   }
 
-  .app-show-btn{
-    margin-left: 34%;
-  }
-
   #app-text-show{
     justify-content: center;
   }
@@ -245,13 +244,12 @@ img {
 
   }
 
+  #app-buttons-container{
+    flex-direction: row;
+  }
     
   .app-buttons{
     margin:3%;
-  }
-
-  .app-show-btn{
-    margin-left: 44.4%;
   }
 
   .prendas-all-from-guardarropa-unit{
