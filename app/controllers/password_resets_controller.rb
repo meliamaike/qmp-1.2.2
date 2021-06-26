@@ -1,21 +1,29 @@
 class PasswordResetsController < ApplicationController
+
   def new
+  #   solo renderiza el form
   end
 
   def create
+    @user = User.find_by(email: params[:email])
 
-    @user=User.find_by_email(email: params[:email])
-    # @user.save!
     if @user.present?
-    PasswordMailer.with(user: @user).reset.deliver_now
-      binding.irb
+      PasswordMailer.with(user: @user).reset.deliver_now
     end
+    redirect_to login_path, notice: "Te hemos enviado un link para recuperar tu contraseña."
 
-    redirect_to root_path, notice: "Si se encuentra una cuenta asociada a ese email, te hemos enviado un link para recuperar tu contraseña."
+
 
   end
 
   def edit
-    @user=User.find_signed(params[:token], purpose:"password_reset")
+    @user = User.find_signed!(params[:token], purpose: "password_reset")
+
+  end
+
+  private
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
   end
 end

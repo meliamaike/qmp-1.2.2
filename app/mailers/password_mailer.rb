@@ -1,13 +1,16 @@
 class PasswordMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.password_mailer.reset.subject
-  #
   def reset
 
-    @token=params[:user].to_sgid(purpose:"password_reset",expires_in: 15.minutes)
-    mail to: params[:user].email
+    @user=params[:user]
+
+    @token=@user.to_signed_global_id(purpose:"password_reset",expires_in: 15.minutes)
+
+    mail(to: @user.email, subject: 'Reseteo de contraseña')
+  end
+
+  def example(user)
+    @user = user
+    mail(to: @user.email, subject: 'Reseteo de contraseña')
   end
 end

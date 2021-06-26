@@ -3,16 +3,23 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    if current_user && current_user.admin?
 
-      #@users = User.all
+      PasswordMailer.example(User.new(email: 'bo@samurails.com')).deliver
+      @users = User.all
 
-      @users =User.page params[:page]
-    else
-      flash[:error]="Usted no tiene permisos"
-      redirect_to root_path
-    end
+
+
+    # if current_user && current_user.admin?
+    #
+    #
+    #   @users =User.page params[:page]
+    # else
+    #   flash[:error]="Usted no tiene permisos"
+    #   redirect_to root_path
+    # end
   end
+
+
 
   # GET /users/1 or /users/1.json
   def show

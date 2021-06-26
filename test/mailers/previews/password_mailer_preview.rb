@@ -6,4 +6,8 @@ class PasswordMailerPreview < ActionMailer::Preview
     PasswordMailer.reset
   end
 
+  def example
+    PasswordMailer.example(User.new(email: 'shrine@shrine.com'))
+  end
+
 end
