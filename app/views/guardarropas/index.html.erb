@@ -1,10 +1,12 @@
 <div id="guardarropas">
-  <div class="go-back-profile-button">
-    <a href="/profile">Volver a mi perfil</a>
+  <div class="btn-go-back-guardarropa">
+    <a href="/profile"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
   </div>
   <div class="container-guardarropas">
     <h2 class="guardarropas-title">Tus guardarropas</h2>
+    <div class="container-new-guardarropa-button">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"guardarropa-new-item-btn" %>
+    </div>
     <ul class="guardarropas-all">
       <% if @guardarropas.blank?  %>
           <i class="fa fa-meh-o"></i> <span class="text-center">No creaste ningún guardarropas todavía </span>

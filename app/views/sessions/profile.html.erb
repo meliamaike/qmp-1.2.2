@@ -45,13 +45,15 @@
 
   <div id="guardarropas-show">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"app-show-btn" %>
+    <ul class="guardarropas-all">
     <% if !(@guardarropas.blank?) %>
       <% @guardarropas.each do |g| %>
-        <li class="prendas-all-from-guardarropa-unit" id="guardarropas-list">
+        <li class="guardarropa-unit" id="guardarropas-list">
           <%= render 'guardarropas/guardarropa', guardarropa: g %>
         </li>
       <% end %>
     <% end %>
+    </ul>
   </div>
 
   <div id="atuendos-show">

@@ -1,6 +1,6 @@
 <div class="guardarropas-show-container">
-  <div class="go-back-profile-button">
-    <a href="/profile">Volver a mi perfil</a>
+  <div class="btn-go-back-guardarropa">
+    <a href="/profile"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
   </div>
   <h2 class="prendas-title"><%= @guardarropa.nombre %></h2>
 
@@ -13,7 +13,7 @@
   <div class="container-prendas-all-from-guardarropa">
     <ul class="prendas-all-from-guardarropa">
       <% if @guardarropa.prendas.blank? %>
-        <span class="text-center">Todavía no agregaste prendas <i class="fa fa-meh-o"></i></span>
+        <span class="guardarropas-text">Todavía no agregaste prendas <i class="fa fa-meh-o"></i></span>
       <% else %>
         <% @guardarropa.prendas.each do |p| %>
           <li class="prendas-all-from-guardarropa-unit">

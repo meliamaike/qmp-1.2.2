@@ -1,10 +1,10 @@
 <div id="atuendo-new">
-    <div>
-      <h2 class="btn-go-back-guardarropa"><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></h2>
-
+    <div class="btn-go-back-guardarropa">
+      <a href="/guardarropas/<%=+params[:guardarropa_id]%>"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+    </div>
       <div>
         <div class="form-atuendo-new">
-          <h2 class="atuendos-title">Crea un atuendos</h2>
+          <h2 class="atuendos-title">Crea un atuendo</h2>
 
           <%= form_for @atuendo , :url => { :action => "create" } do |f| %>
             <div>
@@ -134,6 +134,5 @@
         </div>
 
       </div>
-    </div>
   </div>
 

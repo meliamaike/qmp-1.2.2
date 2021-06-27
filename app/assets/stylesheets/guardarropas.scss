@@ -52,7 +52,7 @@ img {
   margin: 30px 20px;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   padding-bottom: 0;
 }
@@ -77,6 +77,13 @@ img {
   margin-bottom: 8%;
 }
 
+.guardarropas-text{
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
 .guardarropa-new-item-btn{
   display: inline-block;
   color: #FFFF;
@@ -84,48 +91,43 @@ img {
   padding: 15px 20px ;
   font-size: 15px;
   text-transform: uppercase;
-  margin: auto 30%;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  width: 200px;
+  height: 70px;
+}
+
+.container-new-guardarropa-button{
+  display: flex;
+  justify-content: center;
 }
 
 .show-btns-container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  align-items: center;
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-
 }
 
-.btn-atuendo{
-  display: inline-block;
+.btn-atuendo, .btn-atuendo-random, .btn-atuendos-all{
+  margin: 5% 20%;
+  padding: 15px 20px;
+  width: 200px;
+}
+
+.btn-atuendo {
   color: #FFFF;
   background-color: #4e0d3a;
-  padding: 15px 20px ;
-  margin: 5% 32%;
 }
 
 .btn-atuendo-random, .btn-atuendos-all{
-  display: inline-block;
   color:#4e0d3a;
   background-color:  #FFFF;
-  padding: 15px 20px;
-  margin: 5% 35%;
-
-}
-
-.btn-atuendos-all{
-  display: inline-block;
-  color:#4e0d3a;
-  background-color:  #FFFF;
-  padding: 15px 20px;
-  margin: 5% 32%;
-
 }
 
 .container-prendas-all-from-guardarropa{
@@ -147,6 +149,7 @@ img {
   padding: 10px 15px;
   margin: 10px;
   font-size: 25px;
+  align-items: center;
 }
 
 .prenda-actions-icons a, .prendas-all-from-guardarropa-add a i {
@@ -196,7 +199,7 @@ img {
   color: #4e0d3a;
 }
 
-.go-back-profile-button a{
+/* .go-back-profile-button a{
   display: inline-block;
   color: #FFFF;
   background-color: #4e0d3a;
@@ -207,7 +210,7 @@ img {
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-}
+} */
 
 @media (min-width:650px) {
 
@@ -218,19 +221,12 @@ img {
 
   .guardarropa-new-item-btn{
     margin: auto 40%;
+    font-size: 18px;
   }
 
   .prendas-all-from-guardarropa-add{
 
     margin: 0 30%;
-  }
-
-  .btn-atuendos-all, .btn-atuendo{
-    margin: 5% 40%;
-  }
-
-  .btn-atuendo-random{
-    margin: 5% 43%;
   }
 
   .prenda-list-image {
@@ -247,15 +243,10 @@ img {
 
 @media(min-width:1200px) {
 
-  .container-guardarropas {
-    margin: 2% 5%;
-    justify-content: space-around;
-    display: flex;
-    flex-flow: row wrap;
-  }
 
   .guardarropas-all {
     margin: 30px 8%;
+    margin-right: 5px;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
@@ -264,34 +255,32 @@ img {
   .guardarropa-unit {
     padding: 10px 10% 10px 0;
     text-align: center;
+    align-items: center;
   }
 
   .guardarropa-li-unit{
     margin-bottom: 5%;
 
   }
+
+  .guardarropas-text{
+    font-size: 25px;
+  }
   .guardarropa-actions-icons a{
     margin-bottom: 8%;
   }
 
   .show-btns-container{
+    flex-direction: row;
     justify-content: center;
-
+    padding-left: 30%;
+    padding-right: 30%;
   }
 
-  .btn-atuendos-all{
-    margin: 2% 5%;
-    padding: 12px 20px;
-  }
-
-  .btn-atuendo-random{
-    margin: 2% 5%;
-    padding: 12px 20px;
-  }
-
-  .btn-atuendo{
-    margin: 2% 5%;
-    padding: 12px 20px;
+  .btn-atuendo, .btn-atuendo-random, .btn-atuendos-all{
+    min-width: 250px;
+    min-height: 60px;
+    font-size: 20px;
   }
 
   .container-prendas-all-from-guardarropa{
@@ -307,12 +296,5 @@ img {
 
     margin: 30px 36%;
   }
-
-  //.weatherWidget {
-  //  display: block;
-  //
-  //}
-
-
 
 }
