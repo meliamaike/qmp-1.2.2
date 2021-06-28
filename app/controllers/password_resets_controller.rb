@@ -12,14 +12,29 @@ class PasswordResetsController < ApplicationController
     end
     redirect_to login_path, notice: "Te hemos enviado un link para recuperar tu contraseña."
 
-
-
   end
 
   def edit
-    @user = User.find_signed!(params[:token], purpose: "password_reset")
+    @token=params[:token]
+    @user=GlobalID::Locator.locate_signed @token
+  end
+
+  def update
+    @token=params[:token]
+    @user=GlobalID::Locator.locate_signed @token
+
+    if @user.update(password_params)
+      flash[:alert] = 'Tu contraseña se actualizó correctamente.'
+      redirect_to login_path
+    else
+      flash[:alert]= 'No concuerdan las contraseñas.Intenta de vuelta'
+      render 'edit'
+    end
 
   end
+
+
+
 
   private
 

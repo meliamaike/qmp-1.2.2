@@ -1,15 +1,15 @@
-<div>
-  <h2>Actualizar contraseña</h2>
-  <%=form_with url: password_reset_edit_path do |form| %>
-    <div class="field">
-      <%= form.password_field :password ,:placeholder => 'Contraseña',:class=>'sign-up-items'%>
-    </div>
+<%= stylesheet_link_tag "password_resets", :media => "all" %>
+<div id="reset-section">
+  <h2 class="reset-title">Actualizar contraseña</h2>
+  <%=form_with model:@user,url: password_reset_edit_path(token: params[:token]) do |form| %>
 
-    <div class="field">
-      <%= form.password_field :password_confirmation, :placeholder => 'Volvé a escribir la contraseña',:class=>'sign-up-items'%>
+    <p id="alert"> <%=alert%> </p>
+    <div class="reset-form">
+      <%= form.password_field :password ,:placeholder => 'Nueva contraseña',:class=>'reset-items'%>
+      <%= form.password_field :password_confirmation, :placeholder => 'Confirma la nueva contraseña',:class=>'reset-items'%>
     </div>
-    <div>
-      <%=form.submit "Enviar", class: ""%>
+    <div class="reset-buttons">
+      <%=form.submit "Enviar", class: "btn-reset"%>
     </div>
   <%end %>
 </div>

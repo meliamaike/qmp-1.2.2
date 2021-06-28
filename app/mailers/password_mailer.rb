@@ -4,7 +4,7 @@ class PasswordMailer < ApplicationMailer
 
     @user=params[:user]
 
-    @token=@user.to_signed_global_id(purpose:"password_reset",expires_in: 15.minutes)
+    @token=@user.to_signed_global_id(expires_in: 15.minutes)
 
     mail(to: @user.email, subject: 'Reseteo de contraseña')
   end
