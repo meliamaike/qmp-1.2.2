@@ -28,12 +28,12 @@
 
                   <%#= f.select :cabeza_id, @prendas_cabeza.descripcion, {required:true, :prompt => "Seleccionar"} %>
 
-                    <%# @prendas_cabeza.each do |p| %>
-                    <%#= f.radio_button :cabeza, p.id, required: true %>
-                    <%#= render 'prenda', prenda: p %>
-                    <%#= f.hidden_field :cabeza_id, :value => p.id %>
+                    <% @prendas_cabeza.each do |p| %>
+                    <%= f.radio_button :cabeza, p.id, required: true %>
+                    <%= render 'prenda', prenda: p %>
+                    <%= f.hidden_field :cabeza_id, :value => p.id %>
 
-                    <%#end%>
+                    <%end%>
                 <%end%>
               </div>
               <div>
