@@ -34,10 +34,10 @@
     <%= link_to "Crear prenda", new_prenda_path, class:"app-show-btn" %>
     <% if !(@guardarropas.all? { |guardarropa| guardarropa.prendas.nil? }) %>
       <% @guardarropas.each do |g| %>
-          <% g.prendas.each do |p| %>
-            <li class="prendas-all-from-guardarropa-unit" id="prendas-list">
-              <%= render 'guardarropas/prenda', prenda: p %>
-            </li>
+        <% g.prendas.each do |p| %>
+          <li class="prendas-all-from-guardarropa-unit" id="prendas-list">
+            <%= render 'guardarropas/prenda', prenda: p %>
+          </li>
         <% end %>
       <% end %>
     <% end %>
@@ -46,43 +46,17 @@
   <div id="guardarropas-show">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"app-show-btn" %>
     <ul class="guardarropas-all">
-    <% if !(@guardarropas.blank?) %>
-      <% @guardarropas.each do |g| %>
-        <li class="guardarropa-unit" id="guardarropas-list">
-          <%= render 'guardarropas/guardarropa', guardarropa: g %>
-        </li>
+      <% if !(@guardarropas.blank?) %>
+        <% @guardarropas.each do |g| %>
+          <li class="guardarropa-unit" id="guardarropas-list">
+            <%= render 'guardarropas/guardarropa', guardarropa: g %>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
     </ul>
   </div>
 
   <div id="atuendos-show">
-<<<<<<< HEAD
-    <% if (@guardarropas.all? { |guardarropa| guardarropa.atuendos.nil? }) %>
-      <span id="app-text-show">Todavía no agregaste ningún atuendo. Recorda que primero tenes que haber creado un guardarropa con una prenda de cada tipo. </span>
-    <% else %>
-      <span id="app-text-show">Para crear atuendos tenes que ir a la lista de guardarropas y elegir en cual crear un nuevo atuendo </span>
-      <%= link_to "Ver Guardarropas", guardarropas_path, class:"app-show-btn" %>
-
-<!--      <div class="atuendos-filter">-->
-<!--        <div>-->
-          <%#= form_tag guardarropa_atuendos_path, method: :get do %>
-            <%#= select_tag :estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Estación', :class => 'atuendos-filter-item'%>
-            <%#= select_tag :tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Tiempo',  :class => 'atuendos-filter-item'%>
-            <%#= select_tag :ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formalidad',  :class => 'atuendos-filter-item'%>
-            <%#= select_tag :puntaje_order, options_for_select({ "Mayor a menor ⭐" => "desc", "Menor a mayor ⭐️" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Seleccione aqui', :class => 'atuendos-filter-item'%>
-          <%# end %>
-<!--        </div>-->
-<!--      </div>-->
-
-      <% @guardarropas.each do |g| %>
-        <% if g.atuendos.any? %>
-          <% g.atuendos.each do |a| %>
-            <li class="prendas-all-from-guardarropa-unit">
-              <%= render 'atuendos/atuendo', atuendo: a %>
-            </li>
-          <%end%>
-=======
     <span id="app-text-show">Para crear atuendos tenes que ir a la lista de guardarropas y elegir en cual crear un nuevo atuendo. Pero recuerda que no podras hacerlo si todavia no tienes una prenda de cada tipo. </span>
     <%= link_to "Ver Guardarropas", guardarropas_path, class:"app-show-btn-atuendos" %>
     <% @guardarropas.each do |g| %>
@@ -91,7 +65,6 @@
           <li class="prendas-all-from-guardarropa-unit" id="atuendos-list">
             <%= render 'atuendos/atuendo', atuendo: a %>
           </li>
->>>>>>> 93f2cc6378f5e106939ef6561e9c293b4a75305f
         <%end%>
       <%end%>
     <%end%>
@@ -121,11 +94,11 @@
     $ListaPrendas = $('#prendas-list')
     $ListaAtuendos = $('#atuendos-list')
     if ( $ListaGuardarropas.children().length == 0 ) {
-      $("#prendas-button").hide();
-      $("#atuendos-button").hide();
-      $("#tutorial").show();
+        $("#prendas-button").hide();
+        $("#atuendos-button").hide();
+        $("#tutorial").show();
     }
     if ( $ListaPrendas.children().length == 0 && $ListaGuardarropas.children().length == 2) {
-      $("#tutorial-2").show();
+        $("#tutorial-2").show();
     }
 </script>

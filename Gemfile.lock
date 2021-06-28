@@ -67,7 +67,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
-
+    ffi (1.15.3)
+    ffi (1.15.3-x64-mingw32)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
     globalid (0.4.2)
@@ -114,10 +115,7 @@ GEM
       racc (~> 1.4)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
-<<<<<<< HEAD
     public_suffix (4.0.6)
-=======
->>>>>>> 93f2cc6378f5e106939ef6561e9c293b4a75305f
     puma (4.3.8)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -185,10 +183,6 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
-<<<<<<< HEAD
-=======
-    wdm (0.1.1)
->>>>>>> 93f2cc6378f5e106939ef6561e9c293b4a75305f
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -223,13 +217,12 @@ DEPENDENCIES
   sass-rails (>= 6)
   turbolinks (~> 5)
   tzinfo-data
-  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
   will_paginate (~> 3.0)
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.2.18
