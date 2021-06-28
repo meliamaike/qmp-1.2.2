@@ -202,6 +202,15 @@ img {
     width: 70%;
 
   }
+
+.guardarropas-all-profile{
+  margin: 30px 20px;
+  //display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
 }
 
 @media(min-width:1200px) {

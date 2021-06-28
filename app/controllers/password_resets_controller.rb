@@ -27,6 +27,7 @@ class PasswordResetsController < ApplicationController
       flash[:alert] = 'Tu contraseña se actualizó correctamente.'
       redirect_to login_path
     else
+
       flash[:alert]= 'No concuerdan las contraseñas.Intenta de vuelta'
       render 'edit'
     end

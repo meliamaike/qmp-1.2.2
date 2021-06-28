@@ -26,14 +26,17 @@
                   </div>
                 <% else %>
                 
-                  <%#= f.select :cabeza_id, @prendas_cabeza.descripcion, {required:true, :prompt => "Seleccionar"} %>
+                  <%= f.collection_select :cabeza,  @prendas_cabeza, :id, :descripcion, {:prompt => "Elija una prenda", :selected => params[:cabeza_id]}, {class:'form-items',required: true } %>
 
-                    <% @prendas_cabeza.each do |p| %>
-                    <%= f.radio_button :cabeza, p.id, required: true %>
-                    <%= render 'prenda', prenda: p %>
-                    <%= f.hidden_field :cabeza_id, :value => p.id %>
+                  <%= f.number_field :cabeza_id, value: :id, type: :hidden %>
 
-                    <%end%>
+
+                  <%# @prendas_cabeza.each do |p| %>
+                    <%#= f.radio_button :cabeza, p.id, required: true %>
+                    <%#= render 'prenda', prenda: p %>
+                    <%#= f.hidden_field :cabeza_id, :value => p.id %>
+
+                    <%#end%>
                 <%end%>
               </div>
               <div>
@@ -46,13 +49,17 @@
                     </div>
                   </div>
                 <% else %>
-                  <% @prendas_torso.each do |p| %>
-                    <div>
-                      <%= f.radio_button :torso, p.id, required: true %>
-                      <%= render 'prenda', prenda: p %>
-                      <%= f.hidden_field :torso_id, :value => p.id %>
-                    </div>
-                  <%end%>
+
+                  <%= f.collection_select :torso,  @prendas_torso, :id, :descripcion, {:prompt => "Elija una prenda", :selected => params[:torso_id]}, {class:'form-items',required: true } %>
+
+                  <%= f.number_field :torso_id, value: :id, type: :hidden %>
+                  <%# @prendas_torso.each do |p| %>
+<!--                    <div>-->
+                      <%#= f.radio_button :torso, p.id, required: true %>
+                      <%#= render 'prenda', prenda: p %>
+                      <%#= f.hidden_field :torso_id, :value => p.id %>
+<!--                    </div>-->
+                  <%#end%>
                 <%end%>
               </div>
               <div>
@@ -66,11 +73,16 @@
                     </div>
                   </div>
                 <% else %>
-                  <% @prendas_piernas.each do |p| %>
-                    <%= f.radio_button :piernas, p.id, required: true %>
-                    <%= render 'prenda', prenda: p %>
-                    <%= f.hidden_field :piernas_id, :value => p.id %>
-                  <%end%>
+
+                  <%= f.collection_select :piernas,  @prendas_piernas, :id, :descripcion, {:prompt => "Elija una prenda", :selected => params[:piernas_id]}, {class:'form-items',required: true } %>
+
+                  <%= f.number_field :piernas_id, value: :id, type: :hidden %>
+
+                  <%# @prendas_piernas.each do |p| %>
+                    <%#= f.radio_button :piernas, p.id, required: true %>
+                    <%#= render 'prenda', prenda: p %>
+                    <%#= f.hidden_field :piernas_id, :value => p.id %>
+                  <%#end%>
                 <%end%>
               </div>
               <div>
@@ -83,17 +95,20 @@
                     </div>
                   </div>
                 <% else %>
-                  <% @prendas_pies.each do |p| %>
-                    <%= f.radio_button :pies, p.id, required: true %>
-                    <%= render 'prenda', prenda: p %>
-                    <%= f.hidden_field :pies_id, :value => p.id %>
-                  <%end%>
+                  <%= f.collection_select :pies,  @prendas_pies, :id, :descripcion, {:prompt => "Elija una prenda", :selected => params[:pies_id]}, {class:'form-items',required: true } %>
+
+                  <%= f.number_field :pies_id, value: :id, type: :hidden %>
+                  <%# @prendas_pies.each do |p| %>
+                    <%#= f.radio_button :pies, p.id, required: true %>
+                    <%#= render 'prenda', prenda: p %>
+                    <%#= f.hidden_field :pies_id, :value => p.id %>
+                  <%#end%>
                 <%end%>
               </div>
             </div>
 
             <div>
-              <%= f.label :puntaje, class: 'atuendos-form-title' %><br />
+              <%= f.label :puntaje, class: 'atuendos-form-title' %><br/>
 
               <fieldset>
                 <%= f.radio_button :puntaje, 10 , {id: "star5"}%> <%= label_tag(:star5, "10 ⭐️") %>

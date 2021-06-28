@@ -45,7 +45,7 @@
 
   <div id="guardarropas-show">
     <%= link_to "Crear guardarropa", new_guardarropa_path, class:"app-show-btn" %>
-    <ul class="guardarropas-all">
+    <ul class="guardarropas-all-profile">
       <% if !(@guardarropas.blank?) %>
         <% @guardarropas.each do |g| %>
           <li class="guardarropa-unit" id="guardarropas-list">

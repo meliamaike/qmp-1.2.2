@@ -8,6 +8,7 @@ class PasswordsController < ApplicationController
   if current_user.update(password_params)
     redirect_to login_path, notice: "Contraseña actualizada"
   else
+
     render :edit
   end
   end
