@@ -25,7 +25,7 @@
 
                   </div>
                 <% else %>
-
+                
                   <%#= f.select :cabeza_id, @prendas_cabeza.descripcion, {required:true, :prompt => "Seleccionar"} %>
 
                     <% @prendas_cabeza.each do |p| %>
@@ -110,13 +110,13 @@
             </div>
             <div>
               <div>
-                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{ :prompt => "Seleccione la estacion"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:estacion_tag, options_for_select({ "Verano 🏖️" => "verano", "Invierno ❄️" => "invierno",  "Primavera 🌸" => "primavera", "Otonio 🍁" => "otonio" }),{ :prompt => "Seleccione la estacion"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{:prompt => "Seleccione el horario del día"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:tiempo_tag, options_for_select({ "Dia 🌞" => "dia", "Noche 🌜" => "noche" }),{:prompt => "Seleccione el horario del día"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
             </div>
             <div>

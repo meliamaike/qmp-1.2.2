@@ -4,10 +4,10 @@
   <div class="atuendos-filter">
     <div>
       <%= form_tag guardarropa_atuendos_path, method: :get do %>
-        <%= select_tag :estacion_tag, options_for_select({ "Verano 🏖️" => "verano", "Invierno ❄️" => "invierno",  "Primavera 🌸" => "primavera", "Otonio 🍁" => "otonio" }, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Estación', :class => 'atuendos-filter-item'%>
-        <%= select_tag :tiempo_tag, options_for_select({ "Dia 🌞" => "dia", "Noche 🌜" => "noche" }, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Tiempo',  :class => 'atuendos-filter-item'%>
-        <%= select_tag :ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formalidad',  :class => 'atuendos-filter-item'%>
-        <%= select_tag :puntaje_order, options_for_select({ "Mayor a menor ⭐" => "desc", "Menor a mayor ⭐️" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Seleccione aqui', :class => 'atuendos-filter-item'%>
+        <%= select_tag :estacion_tag, options_for_select({ "Verano 🏖️" => "verano", "Invierno ❄️" => "invierno",  "Primavera 🌸" => "primavera", "Otonio 🍁" => "otonio" }, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Todas las estaciones', :class => 'atuendos-filter-item'%>
+        <%= select_tag :tiempo_tag, options_for_select({ "Dia 🌞" => "dia", "Noche 🌜" => "noche" }, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Todos los tiempos',  :class => 'atuendos-filter-item'%>
+        <%= select_tag :ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formal/Informal',  :class => 'atuendos-filter-item'%>
+        <%= select_tag :puntaje_order, options_for_select({ "Mayor a menor ⭐" => "desc", "Menor a mayor ⭐️" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Sin orden', :class => 'atuendos-filter-item'%>
       <% end %>
     </div>
   </div>
