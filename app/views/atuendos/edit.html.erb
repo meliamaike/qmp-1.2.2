@@ -1,7 +1,7 @@
   <div style="background-color: blanchedalmond;">
     <div>
       <div>
-        <h2 class="text-center">Edición de atuendos</h2>
+        <h2 class="create-title-contact">Edición de atuendos</h2>
         <%= form_for @atuendo, :url => { :action => "update" , :id => @atuendo.id}, :method => :put do |f| %>
           <div>
             <%= f.label :nombre, {:class => 'm-3'} %>
