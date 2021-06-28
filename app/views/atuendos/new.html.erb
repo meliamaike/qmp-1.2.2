@@ -1,10 +1,10 @@
 <div id="atuendo-new">
-    <div>
-      <h2 class="btn-go-back-guardarropa"><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></h2>
-
+    <div class="btn-go-back-guardarropa">
+      <a href="/guardarropas/<%=+params[:guardarropa_id]%>"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+    </div>
       <div>
         <div class="form-atuendo-new">
-          <h2 class="atuendos-title">Crea un atuendos</h2>
+          <h2 class="atuendos-title">Crea un atuendo</h2>
 
           <%= form_for @atuendo , :url => { :action => "create" } do |f| %>
             <div>
@@ -25,13 +25,15 @@
 
                   </div>
                 <% else %>
+                
+                  <%#= f.select :cabeza_id, @prendas_cabeza.descripcion, {required:true, :prompt => "Seleccionar"} %>
 
-                  <% @prendas_cabeza.each do |p| %>
+                    <% @prendas_cabeza.each do |p| %>
                     <%= f.radio_button :cabeza, p.id, required: true %>
                     <%= render 'prenda', prenda: p %>
                     <%= f.hidden_field :cabeza_id, :value => p.id %>
 
-                  <%end%>
+                    <%end%>
                 <%end%>
               </div>
               <div>
@@ -108,13 +110,13 @@
             </div>
             <div>
               <div>
-                <%= f.select(:estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a),{ :prompt => "Seleccione la estacion"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:estacion_tag, options_for_select({ "Verano 🏖️" => "verano", "Invierno ❄️" => "invierno",  "Primavera 🌸" => "primavera", "Otonio 🍁" => "otonio" }),{ :prompt => "Seleccione la estacion"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.select(:tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a),{:prompt => "Seleccione el horario del día"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:tiempo_tag, options_for_select({ "Dia 🌞" => "dia", "Noche 🌜" => "noche" }),{:prompt => "Seleccione el horario del día"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
               <div>
-                <%= f.select(:ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
+                <%= f.select(:ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
             </div>
             <div>
@@ -134,6 +136,5 @@
         </div>
 
       </div>
-    </div>
   </div>
 

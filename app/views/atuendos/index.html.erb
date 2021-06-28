@@ -1,19 +1,19 @@
 <div id="atuendos">
-  <div class="btn-go-back-guardarropa" ><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Volver a Guardarropa</a></div>
+  <div class="btn-go-back-guardarropa" ><a href="/guardarropas/<%=+params[:guardarropa_id]%>"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></div>
   <h2 class="atuendos-title">Atuendos</h2>
   <div class="atuendos-filter">
     <div>
       <%= form_tag guardarropa_atuendos_path, method: :get do %>
-        <%= select_tag :estacion_tag, options_for_select(Atuendo.estacion_tags.keys.to_a, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Estación', :class => 'atuendos-filter-item'%>
-        <%= select_tag :tiempo_tag, options_for_select(Atuendo.tiempo_tags.keys.to_a, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Tiempo',  :class => 'atuendos-filter-item'%>
-        <%= select_tag :ocasion_tag, options_for_select(Atuendo.ocasion_tags.keys.to_a, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formalidad',  :class => 'atuendos-filter-item'%>
-        <%= select_tag :puntaje_order, options_for_select({ "Mayor a menor ⭐" => "desc", "Menor a mayor ⭐️" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Seleccione aqui', :class => 'atuendos-filter-item'%>
+        <%= select_tag :estacion_tag, options_for_select({ "Verano 🏖️" => "verano", "Invierno ❄️" => "invierno",  "Primavera 🌸" => "primavera", "Otonio 🍁" => "otonio" }, @estacion_selected), :onchange => "this.form.submit();", :prompt => 'Todas las estaciones', :class => 'atuendos-filter-item'%>
+        <%= select_tag :tiempo_tag, options_for_select({ "Dia 🌞" => "dia", "Noche 🌜" => "noche" }, @tiempo_selected), :onchange => "this.form.submit();", :prompt => 'Todos los tiempos',  :class => 'atuendos-filter-item'%>
+        <%= select_tag :ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }, @formalidad_selected), :onchange => "this.form.submit();", :prompt => 'Formal/Informal',  :class => 'atuendos-filter-item'%>
+        <%= select_tag :puntaje_order, options_for_select({ "Mayor a menor ⭐" => "desc", "Menor a mayor ⭐️" => "asc" }, @puntaje_order), :onchange => "this.form.submit();", :prompt => 'Sin orden', :class => 'atuendos-filter-item'%>
       <% end %>
     </div>
   </div>
   <ul class="atuendos-all">
     <% if @atuendos.blank?  %>
-      <span class="text-no-atuendo">No creaste ningún atuendo todavía <i class="fa fa-meh-o"></i> </span>
+      <span class="text-no-atuendo">No se encontro ningun atuendo <i class="fa fa-meh-o"></i> </span>
       <div class="btn-atuendo-add">
         <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">
           Nuevo atuendo<i class="fa fa-plus"></i>
