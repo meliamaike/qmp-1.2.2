@@ -10,6 +10,12 @@
     <a class="btn-atuendo-random" type="button" href="/guardarropas/<%= @guardarropa.id %>/atuendos-generate">Random</a>
   </div>
 
+  <div class="prendas-all-from-guardarropa-add">
+  <a href="/prendas/new?guardarropa_id=<%=+params[:id]%>" title="Agregar nueva prenda">
+    Agregar nueva prenda  <i class="fa fa-plus"></i>
+  </a>
+  </div>
+
   <div class="container-prendas-all-from-guardarropa">
     <ul class="prendas-all-from-guardarropa">
       <% if @guardarropa.prendas.blank? %>
@@ -22,12 +28,6 @@
         <%end%>
       <% end %>
     </ul>
-
-    <div class="prendas-all-from-guardarropa-add">
-      <a href="/prendas/new?guardarropa_id=<%=+params[:id]%>" title="Agregar nueva prenda">
-        Agregar nueva prenda  <i class="fa fa-plus"></i>
-      </a>
-    </div>
 
   </div>
 

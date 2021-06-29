@@ -60,7 +60,7 @@ img {
 .guardarropa-unit {
   padding: 10px 15px;
   margin: 10px;
-  text-align: start;
+  text-align: center;
   font-size: 25px;
 }
 
@@ -143,6 +143,7 @@ img {
   flex-direction: column;
   flex-wrap: wrap;
   padding-bottom: 0;
+  margin-top: 0;
 }
 
 .prendas-all-from-guardarropa-unit{
@@ -150,6 +151,7 @@ img {
   margin: 10px;
   font-size: 25px;
   align-items: center;
+  text-align: center;
 }
 
 .prenda-actions-icons a, .prendas-all-from-guardarropa-add a i {
@@ -173,6 +175,7 @@ img {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  margin-bottom: 0%;
 }
 
 //.weatherWidget {
@@ -183,7 +186,7 @@ img {
 .prenda-list{
   text-transform: uppercase;
   text-align: center;
-
+  font-size: 20px;
 }
 
 .prenda-list-image{
@@ -285,6 +288,10 @@ img {
 
   .container-prendas-all-from-guardarropa{
     flex-direction: column;
+  }
+
+  .prenda-list{
+    font-size: 25px;
   }
 
   .prendas-all-from-guardarropa{

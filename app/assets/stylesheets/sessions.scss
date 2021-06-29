@@ -55,15 +55,14 @@ img {
   display: flex;
   color: #FFFF;
   background-color: #4e0d3a;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   text-align: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   width: 150px;
   box-sizing: content-box;
-  font-size: 18px;
-  padding: 15px 20px;
+  padding: 10px 20px;
 }
 .app-show-btn-atuendos{
   margin-top: 3%;
@@ -119,6 +118,13 @@ img {
   display: flex;
   flex-direction:row;
   justify-content: space-evenly;
+}
+
+.guardarropa-unit-profile {
+  padding: 10px 15px;
+  margin: 10px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .btn-login{
@@ -211,6 +217,11 @@ img {
   flex-wrap: wrap;
   padding-bottom: 0;
 }
+
+.app-show-btn, .app-show-btn-atuendos{
+  padding: 20px 20px;
+}
+
 }
 
 @media(min-width:1200px) {
@@ -270,6 +281,11 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     padding-bottom: 0;
+  }
+
+  .guardarropa-unit-profile {
+    text-align: center;
+    align-items: center;
   }
 
 

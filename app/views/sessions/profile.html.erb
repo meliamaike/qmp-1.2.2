@@ -48,7 +48,7 @@
     <ul class="guardarropas-all-profile">
       <% if !(@guardarropas.blank?) %>
         <% @guardarropas.each do |g| %>
-          <li class="guardarropa-unit" id="guardarropas-list">
+          <li class="guardarropa-unit-profile" id="guardarropas-list">
             <%= render 'guardarropas/guardarropa', guardarropa: g %>
           </li>
         <% end %>

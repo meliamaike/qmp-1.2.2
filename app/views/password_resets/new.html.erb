@@ -1,16 +1,20 @@
 <%= stylesheet_link_tag "password_resets", :media => "all" %>
 
-<div id="reset-section">
-  <h2 class="reset-title">Olvido de contraseña</h2>
-<%=form_with url: password_reset_path do |form| %>
-  <div class="reset-form">
-    <%=form.label :email, class: 'reset-items'%>
-    <%= form.text_field :email , class: 'reset-items' ,placeholder: "ejemplo@gmail.com"%>
-  </div>
-    <div class="reset-buttons">
-      <%=form.submit "Enviar", class: "btn-reset"%>
+<div class="reset-form">
+  <div class="btn-go-back-guardarropa"><a href="/login"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></div>
+    <div id="reset-section">
+      <h2 class="reset-title">Olvido de contraseña</h2>
+      <%=form_with url: password_reset_path do |form| %>
+      <div class="reset-form">
+        <%=form.label :email, class: 'reset-text'%><br /><br />
+        <%= form.text_field :email , class: 'reset-items' ,placeholder: "ejemplo@gmail.com"%>
+      </div>
+      <div class="reset-buttons">
+        <%=form.submit "Enviar", class: "btn-reset"%>
+      </div>
+      <%end %>
     </div>
-<%end %>
+  </div>
 </div>
 
 
