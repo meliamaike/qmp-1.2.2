@@ -12,13 +12,9 @@
     </div>
   </div>
 
-  <div class="btn-atuendo-add">
-    <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">Nuevo atuendo<br><i class="fa fa-plus"></i></a>
-  </div>
-
   <ul>
     <% if @atuendos.blank?  %>
-      <span class="text-no-atuendo">No se encontro ningun atuendo <i class="fa fa-meh-o"></i> </span>
+      <span class="text-no-atuendo">No se encontro ningún atuendo <i class="fa fa-meh-o"></i> </span>
       <div class="btn-atuendo-add">
         <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">
           Nuevo atuendo<br><i class="fa fa-plus"></i>

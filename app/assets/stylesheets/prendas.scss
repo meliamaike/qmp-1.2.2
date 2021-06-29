@@ -94,7 +94,7 @@ img {
   font-weight: bold;
 }
 
-.new_prenda{
+.new_prenda, .create-form form{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,6 +202,7 @@ img {
   display: flex;
   flex-direction:row;
   justify-content: space-evenly;
+  margin-right: 10%;
 }
 
 .btn-save-changes{
@@ -229,6 +230,7 @@ img {
   font-size: 14px;
   margin-top: 25px;
   width: 98px;
+
 }
 
 .prenda-card{
