@@ -56,6 +56,7 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   padding-bottom: 0;
+  max-width: 300px;
 }
 
 .atuendos-filter-item{
@@ -74,6 +75,13 @@ img {
   color: #e30425;
   font-family: 'Roboto', sans-serif;
   margin-top: 10%;
+}
+
+.btn-random-container{
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .atuendos-all {
@@ -105,8 +113,9 @@ img {
 
 .atuendo-details-container{
   text-transform: capitalize;
-  font-size: 1.4em;
-  margin-bottom: 5%;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .prendas-from-atuendos-container{
@@ -116,7 +125,7 @@ img {
 
 .prenda-only-one{
   display: flex;
-  //justify-content: space-between;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -126,7 +135,7 @@ img {
 
 
 .btn-atuendo-add{
-  text-align: justify;
+  text-align: center;
   margin: 0 10%;
 }
 .btn-atuendo-add a{
@@ -151,6 +160,10 @@ img {
   margin-bottom: 5%;
 }
 
+.stars-fieldset{
+  max-width: 300px;
+}
+
 #atuendo-new{
   width:100vw;
   padding-top: 15px;
@@ -171,7 +184,7 @@ img {
   outline: none;
   font-family: 'Roboto', sans-serif;
   position: relative;
-
+  max-width: 300px;
 }
 
 .btn-random{
@@ -181,24 +194,34 @@ img {
   padding: 15px 20px ;
   font-size: 15px;
   text-transform: uppercase;
-  margin: auto 32%;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
 
 .atuendos-form-title{
-  font-size: 15px;
+  font-size: 12px;
   color: #4e0d3a;
   margin-bottom: 9px;
   //padding: 0px 15px 10px 15px;
   text-transform: capitalize;
+}
 
-
+.atuendo-actions-btn a{
+  color: #4e0d3a;
 }
 
 .form-atuendo-new div{
-  margin-top: 7%;
+  margin-top: 4%;
+}
+
+.prendas-all-details-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 25px;
 }
 
 .weatherWidget {
@@ -210,8 +233,10 @@ img {
 @media (min-width:650px) {
   .btn-go-back-guardarropa a{
     font-size: 15px;
+  }
 
-
+  .atuendos-form-title{
+    font-size: 20px;
   }
 
   .text-no-atuendo{
@@ -220,15 +245,18 @@ img {
 
   .btn-atuendo-add a{
     font-size: 18px;
-    margin: 30px 80%;
 
   }
 
-  .atuendo-details-container{
-
-    font-size: 2em;
-    margin: 0px 51% 0 1%;
+  .stars-fieldset{
+    max-width: 500px;
   }
+
+  .atuendos-form-items {
+    max-width: 600px;
+    font-size: 20px;
+  }
+
   .atuendo-unit h3{
     font-size: 34px;
     padding: 0;
@@ -238,8 +266,9 @@ img {
     margin: 6% 4%;
     font-size: 30px;
   }
-  .atuendo-actions-btn a{
-    color: #4e0d3a;
+
+  .atuendos-filter{
+    max-width: 500px;
   }
 
   //.prendas-all-details-container{
@@ -251,8 +280,7 @@ img {
   //}
 
   .prendas-from-atuendos-container{
-    margin: 3% 3%;
-    font-size: 15px;
+    font-size: 20px;
   }
 
 }
@@ -264,8 +292,18 @@ img {
   margin-bottom: 0%;
 
 }
+
+.atuendos-form-items {
+  max-width: 1500px;
+  font-size: 22px;
+}
+
 .atuendos-title {
   font-size: 5em;
+}
+
+.atuendos-form-title{
+  font-size: 25px;
 }
 
   .text-no-atuendo{
@@ -274,9 +312,17 @@ img {
   }
 
 .btn-atuendo-add a{
-  font-size: 18px;
-  margin: 30px 42%;
+  font-size: 20px;
 
+}
+
+.stars-fieldset{
+  max-width: 800px;
+  font-size: 22px;
+}
+
+.atuendos-filter-item{
+  font-size: 22px;
 }
 
   .atuendos-all{
@@ -288,19 +334,20 @@ img {
   }
 
   .atuendo-actions-btn{
-    margin: 11% 4%;
-
+    margin-top: 0;
+    margin-bottom: 2%;
   }
-  .atuendo-details-container{
-    font-size: 3.5em;
+
+  .atuendos-filter{
+    max-width: 700px;
   }
 
   .prendas-all-details-container h4{
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .prendas-from-atuendos-container{
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .weatherWidget {

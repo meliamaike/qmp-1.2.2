@@ -8,7 +8,7 @@
 
           <%= form_for @atuendo , :url => { :action => "create" } do |f| %>
             <div>
-              <%= f.label :nombre , class: 'atuendos-form-title'%>
+            <h3 class="atuendos-form-title">Nombre</h3>
               <%= f.text_field :nombre, class: 'atuendos-form-items', required: true %>
             </div>
             <div>
@@ -110,7 +110,7 @@
             <div>
               <%= f.label :puntaje, class: 'atuendos-form-title' %><br/>
 
-              <fieldset>
+              <fieldset class="stars-fieldset">
                 <%= f.radio_button :puntaje, 10 , {id: "star5"}%> <%= label_tag(:star5, "10 ⭐️") %>
                 <%= f.radio_button :puntaje, 9 , {id: "star5"}%> <%= label_tag(:star5, "9 ⭐️") %>
                 <%= f.radio_button :puntaje, 8 , {id: "star5"}%> <%= label_tag(:star5, "8 ⭐️") %>

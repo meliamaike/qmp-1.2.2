@@ -11,18 +11,23 @@
       <% end %>
     </div>
   </div>
-  <ul class="atuendos-all">
+
+  <div class="btn-atuendo-add">
+    <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">Nuevo atuendo<br><i class="fa fa-plus"></i></a>
+  </div>
+
+  <ul>
     <% if @atuendos.blank?  %>
       <span class="text-no-atuendo">No se encontro ningun atuendo <i class="fa fa-meh-o"></i> </span>
       <div class="btn-atuendo-add">
         <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">
-          Nuevo atuendo<i class="fa fa-plus"></i>
+          Nuevo atuendo<br><i class="fa fa-plus"></i>
         </a>
       </div>
 
     <% else %>
       <% @atuendos.each do |a| %>
-        <li class="atuendo-unit">
+        <li class="prendas-all-from-guardarropa-unit">
           <h3> <%= a.nombre %></h3>
           <div class="atuendo-actions-btn">
             <%= link_to "", { :controller => :atuendos, :action => :edit, id: a.id }, { class: "fa fa-pencil fa-fw"} %>
@@ -33,10 +38,6 @@
         </li>
 
       <%end%>
-      <div class="btn-atuendo-add">
-        <a  href="/guardarropas/<%=+params[:guardarropa_id]%>/atuendos/new">Nuevo atuendo<i class="fa fa-plus"></i>
-        </a>
-      </div>
     <%end%>
   </ul>
   <%= paginate @atuendos,window: 1 %>

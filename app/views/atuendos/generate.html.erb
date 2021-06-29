@@ -1,15 +1,15 @@
 
   <div id="atuendo-new">
-    <h2 class="btn-go-back-guardarropa"><a href="/guardarropas/<%=+params[:guardarropa_id]%>">Guardarropa</a></h2>
+    <div class="btn-go-back-guardarropa"><a href="/guardarropas/<%=+params[:guardarropa_id]%>"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a></div>
 
     <div>
       <div class="form-atuendo-new">
         <h2 class="atuendos-title">Atuendo Random</h2>
-        <div><a type="button" class="btn-random" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a></div>
+        <div class="btn-random-container"><a type="button" class="btn-random" href="/guardarropas/<%= @prenda_pies.guardarropa_id %>/atuendos-generate">Generar otro</a></div>
         <%= form_for @atuendo, :url => { :action => "create" } do |f| %>
 
           <div>
-            <%= f.label :nombre, class: 'atuendos-form-title' %>
+            <%= f.label :nombre, class: 'atuendos-form-title' %> <br />
             <%= f.text_field :nombre, class: 'atuendos-form-items' %>
           </div>
 
@@ -33,7 +33,7 @@
 
             <div>
               <%= f.label :puntaje, class: 'atuendos-form-title' %><br />
-              <fieldset>
+              <fieldset class="stars-fieldset">
                 <%= f.radio_button :puntaje, 10 , {id: "star10"}%> <%= label_tag(:star10, "10 ⭐️") %>
                 <%= f.radio_button :puntaje, 9 , {id: "star9"}%> <%= label_tag(:star9, "9 ⭐️") %>
                 <%= f.radio_button :puntaje, 8 , {id: "star8"}%> <%= label_tag(:star8, "8 ⭐️") %>
@@ -63,7 +63,7 @@
             </div>
             <div>
               <div>
-                <%= f.label :descripcion, class: 'atuendos-form-title' %> <%= f.text_area(:descripcion, {:class => 'atuendos-form-items'}) %>
+                <%= f.label :descripcion, class: 'atuendos-form-title' %><br /> <%= f.text_area(:descripcion, {:class => 'atuendos-form-items'}) %>
               </div>
 
               <%= f.number_field :user_id, value:current_user.id, type: :hidden %>
