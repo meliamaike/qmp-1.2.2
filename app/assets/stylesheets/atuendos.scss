@@ -206,6 +206,31 @@ img {
 
 }
 
+.no-item-message{
+  color: red;
+  font-size: 2em;
+  padding: 0px 16%;
+  text-transform: none;
+
+}
+
+.no-item-link a{
+  color: white;
+  text-align: center;
+  padding: 8px 5px;
+  cursor: pointer;
+  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  width: 100px;
+  margin: 10px 43%;
+
+
+}
+
+
+
+
+
 
 @media (min-width:650px) {
   .btn-go-back-guardarropa a{

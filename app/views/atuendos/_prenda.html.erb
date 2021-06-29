@@ -6,12 +6,6 @@
     <span> Material:
       <%=prenda.material %>
     </span>
-<!--    <span>Color primario:-->
-      <%#= prenda.color_primario %>
-<!--    </span>-->
-<!--    <span>Color secundario:-->
-      <%#= prenda.color_secundario %>
-<!--    </span>-->
 
     <div class="prenda-only-one-icons">
       <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>

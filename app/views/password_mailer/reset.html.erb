@@ -1,8 +1,10 @@
   <p>
     Hola <%=params[:user].email %>,<br>
-    Alguien pidio la recuperación de tu contraseña.<br>
+    Alguien pidió la recuperación de tu contraseña.<br>
     Si fuiste vos, hace click en el link para recuperar tu contraseña.<br>
-    El link vencerá en 15 minutos.
+    El link vencerá en 15 minutos.<br><br>
+
+    Shrine
   </p>
   <div>
     <%= link_to "Recuperar contraseña", password_reset_edit_url(token: @token) %>

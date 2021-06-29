@@ -16,11 +16,11 @@
                 <h3 class="atuendos-form-title">Cabeza</h3>
 
                 <% if @prendas_cabeza.blank?  %>
-                  <div>
+                  <div class="no-item-div">
 
-                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
-                    <div>
-                      <a href="/prendas/new?prenda_tipo_id=1&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                    <span class="no-item-message"><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div class="no-item-link">
+                      <a href="/prendas/new?prenda_tipo_id=1&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" >Crear</a>
                     </div>
 
                   </div>
@@ -42,10 +42,10 @@
               <div>
                 <h3 class="atuendos-form-title">Torso</h3>
                 <% if @prendas_torso.blank? %>
-                  <div>
-                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
-                    <div>
-                      <a href="/prendas/new?prenda_tipo_id=2&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                  <div class="no-item-div">
+                    <span class="no-item-message"><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div class="no-item-link">
+                      <a href="/prendas/new?prenda_tipo_id=2&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" >Crear</a>
                     </div>
                   </div>
                 <% else %>
@@ -65,11 +65,11 @@
               <div>
                 <h3 class="atuendos-form-title">Piernas</h3>
                 <% if @prendas_piernas.blank?  %>
-                  <div>
+                  <div class="no-item-div">
 
-                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
-                    <div>
-                      <a href="/prendas/new?prenda_tipo_id=3&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear</a>
+                    <span class="no-item-message"><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div class="no-item-link">
+                      <a href="/prendas/new?prenda_tipo_id=3&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" >Crear</a>
                     </div>
                   </div>
                 <% else %>
@@ -88,10 +88,10 @@
               <div>
                 <h3 class="atuendos-form-title">Pies</h3>
                 <% if @prendas_pies.blank? %>
-                  <div>
-                    <span><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
-                    <div>
-                      <a href="/prendas/new?prenda_tipo_id=4&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" class="btn btn-primary" >Crear!</a>
+                  <div class="no-item-div">
+                    <span class="no-item-message"><i class="fa fa-meh-o"></i> No hay prendas de este tipo</span>
+                    <div class="no-item-link">
+                        <a href="/prendas/new?prenda_tipo_id=4&guardarropa_id=<%=+params[:guardarropa_id]%>" type="button" >Crear</a>
                     </div>
                   </div>
                 <% else %>
