@@ -30,7 +30,6 @@
 
                   <%= f.number_field :cabeza_id, value: :id, type: :hidden %>
 
-
                   <%# @prendas_cabeza.each do |p| %>
                     <%#= f.radio_button :cabeza, p.id, required: true %>
                     <%#= render 'prenda', prenda: p %>
@@ -134,6 +133,7 @@
                 <%= f.select(:ocasion_tag, options_for_select({ "Formal 🤵🏻" => "formal", "Informal 🧍🏻‍♂️" => "informal" }),{:prompt => "Seleccione la ocasión"}, {:required => true,:class => 'atuendos-form-items'})%>
               </div>
             </div>
+
             <div>
               <div>
                 <%= f.text_area(:descripcion,{:class => 'form-items', required:true,placeholder:'Descripción'}) %>

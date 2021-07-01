@@ -1,15 +1,7 @@
 <div class="prendas-from-atuendos-container">
   <div class="prenda-only-one">
-    <span> Descripción:
+    <span>
        <%=prenda.descripcion %>
     </span>
-    <span> Material:
-      <%=prenda.material %>
-    </span>
-
-    <div class="prenda-only-one-icons">
-      <%= link_to "", { :controller => :prendas, :action => :edit, id: prenda.id }, { class: "fa fa-pencil fa-fw"} %>
-      <%= link_to "", prenda, method: :delete, :class =>"fa fa-times no-underline" , data: { confirm: '¿Está seguro que queres borrar la prenda?' }%>
-    </div>
   </div>
 </div>
