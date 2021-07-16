@@ -12,7 +12,4 @@ class User < ApplicationRecord
    has_many :atuendos, dependent: :destroy
    has_many :prendas, dependent: :destroy
 
-
-
-
 end

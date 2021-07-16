@@ -36,7 +36,6 @@ img {
 }
 
 .navigation-left{
-  //width: 30%;
   flex: 1 1 0%;
   justify-content: flex-start;
   display: flex;
@@ -54,14 +53,28 @@ img {
 
 }
 
-//////////
+//////
+.weather-container{
+  background-color: white;
+  display: flex;
+  //flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#temp-container{
+  font-size: 12px;
+  font-weight: 800;
+
+}
+
+//////
 .dropdownMenu{
   width: 50%;
   z-index: 10000;
 }
 .title{
   padding: 7px 20px;
-  //background-color: #994b4b;
   color: #e30425;
   margin-bottom: 0;
   text-align: right;
@@ -103,7 +116,7 @@ img {
   color: #FFFF;
 }
 
-/////////
+
 
 .main-nav {
   width: 0;
@@ -206,7 +219,6 @@ img {
 
 .rslides li {
 
-  //-webkit-backface-visibility: hidden;
   position: absolute;
   display: none;
   width: 100%;
@@ -363,7 +375,6 @@ img {
 //TEAM
 
 #team {
-  //background-image: url("/assets/bcg-about-us-2.jpg");
   background-size:cover;
   background-color: #4e0d3a;
   width: 100%;

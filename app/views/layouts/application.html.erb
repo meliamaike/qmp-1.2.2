@@ -81,19 +81,26 @@
           </ul>
         </div>
       </div>
-
     </div>
-
-
-    <!--  <div class="weatherWidget" ></div>-->
-
-    <!--  <section class="ajax-section">-->
-    <!--    <div class="container">-->
-    <!--      <ul class="cities"></ul>-->
-    <!--    </div>-->
-    <!--  </section>-->
+      </section>
   </header>
-    <%= yield %>
+
+<div class="weather-container">
+  <div id='clima-loader' hidden=true>
+    Cargando...
+  </div>
+  <div id="clima-icon">
+    <img id="wicon" src="" alt="Weather icon">
+  </div>
+  <div id="temp-container"> </div>
+</div>
+
+
+
+
+
+
+  <%= yield %>
   <!-----FOOTER----->
   <footer class="main-footer">
     <ul class="footer-list">
@@ -129,6 +136,45 @@
 
 
   <!--SCRIPTS-->
+
+  <script>
+
+
+      window.onload=function loadText(){
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=buenos+aires&units=metric&lang=sp&appid=ca4f18c467d30164524130157029f3ef', true);
+
+          xhr.onload = function(){
+              document.getElementById('clima-loader').hidden = true;
+              if(this.status == 200){
+                  let climaResponse = JSON.parse(this.responseText);
+                  let climaIcon= climaResponse.weather[0].icon;
+                  let tempDescription = climaResponse.main.temp;
+                  let temperaturaHTML = `<span>${tempDescription}° Capital Federal</span>`;
+                  var iconurl = "http://openweathermap.org/img/w/" + climaIcon + ".png";
+                  $('#wicon').attr('src', iconurl);
+                  document.getElementById('temp-container').innerHTML = temperaturaHTML;
+
+              }
+          }
+
+          xhr.onprogress = function(){
+              document.getElementById('clima-loader').hidden = false;
+          }
+
+
+          xhr.onerror = function(){
+              document.getElementById('clima-loader').hidden = true;
+              console.log('Request Error...');
+          }
+
+          xhr.send();
+
+
+      }
+
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.min.js"></script>
@@ -209,23 +255,6 @@
 
   </script>
 
-    <script>
-        window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-        window.weatherWidgetConfig.push({
-            selector:".weatherWidget",
-            apiKey:"XDRL4GJRHK3ZE78SXNF8KFLK7",
-            location:"Buenos Aires, Argentina",
-            unitGroup:"metric",
-            forecastDays: 1,
-            showTitle:false
-        });
 
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
   </body>
 </html>

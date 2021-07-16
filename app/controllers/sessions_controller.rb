@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
   def new
-  #Cuando el controller esta vacio, renderiza la vista
+  #renderiza la vista
   end
 
   def create

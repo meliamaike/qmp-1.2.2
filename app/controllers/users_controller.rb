@@ -4,10 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
 
-
     if current_user && current_user.admin?
-
-
       @users =User.page params[:page]
     else
       flash[:error]="Usted no tiene permisos"
